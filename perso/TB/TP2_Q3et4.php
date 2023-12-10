@@ -1,43 +1,43 @@
 <?php
 
-// Définit une classe abstraite
-abstract class ClasseAbstraite {
+// Defines an abstract class
+abstract class AbstractClass {
     abstract public function abstractMethod();
 }
 
-// Définit une interface
-interface MonInterface {
+// Defines an interface
+interface MyInterface {
     public function interfaceMethod();
 }
 
-// Définit une classe qui hérite d'une classe abstraite et implémente une interface
-class MaClasse extends ClasseAbstraite implements MonInterface {
+// Defines a class that inherits from an abstract class and implements an interface
+class MyClass extends AbstractClass implements MyInterface {
     public function abstractMethod() {
-        print("texte de la méthode abstraite de la classe abstraite !\n");
+        print("Text from the abstract method of the abstract class!\n");
     }
 
     public function interfaceMethod() {
-        print("texte de l'interface\n");
+        print("Text from the interface method\n");
     }
 }
 
-$obj = new MaClasse();
+$obj = new MyClass();
 
-$obj->abstractMethod();
-$obj->interfaceMethod();
+$obj->abstractMethod();    // Calls the abstract method
+$obj->interfaceMethod();   // Calls the interface method
 
-// Fonction qui trie un tableau
+// Function that sorts an array
 /**
- * @param array $tableau tableau à trier
+ * @param array $array array to be sorted
  *
- * @return array tableau trié
+ * @return array sorted array
  */
-function sortTable(array $tableau){
-    sort($tableau);
-    return $tableau;
+function sortArray(array $array){
+    sort($array);
+    return $array;
 }
 
-// Appel de la fonction de tri
-$tableauTri = sortTable([0, 2, 1, 0, 58, 7]);
-print_r($tableauTri);
+// Calling the sorting function
+$sortedArray = sortArray([0, 2, 1, 0, 58, 7]);
+print_r($sortedArray);
 ?>

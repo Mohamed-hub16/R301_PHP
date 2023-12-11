@@ -1,6 +1,7 @@
 <?php 
 /*
-Defines a class [your initials]Class (inside a namespace with your initials, like "WP\S01E01" with multiple methods (one for each item below) which:
+Defines a class [your initials]Class (inside a namespace with your initials, like "WP\S01E01" with multiple methods (one f
+or each item below) which:
 Outputs a given string in capital letters, working with special characters (like "èçì…").
 Escapes a given HTML string into their safe character equivalents.
 Converts a given array as a string, all values being separated by ", ".
@@ -8,49 +9,64 @@ Verifies that a given string is a correct email.*/
 
 namespace LE;
 
-class LEClass
+class LE
 {
-    public function capitalLetters($string)
-    {
-        return mb_strtoupper($string);
+    public function mettreMajuscule($chaine)    {
+        //changer tout les caractères en majuscule
+        $chaineMajuscule = strtoupper($chaine);
+        return $chaineMajuscule;
     }
 
-    public function escapeHtml($string)
+    public function charactereSpeciaux($chaine)
     {
-        return htmlspecialchars($string);
+        //remplace les caractères spéciaux par leur équivalent html
+        return htmlspecialchars($chaine);
     }
 
-    public function arrayToString($array)
+    public function tableauEnString($tableau)
     {
-        $string = "";
+        $chaine = "";
         $i = 0;
-        foreach ($array as $value) {
-            $string .= $value;
-            if ($i != count($array) - 1) {
-                $string .= ", " ;
+        //parcours le tableau et ajoute chaque valeur à la chaine
+        foreach ($tableau as $valeur) {
+            $chaine .= $valeur;
+            if ($i != count($tableau) - 1) {
+                $chaine .= ", " ;
             }
             $i++;
         }
-        return $string ;
+        return $chaine ;
     }
 
-    public function verifyEmail($email)
+    public function verifEmail($email)
     {
-        return filter_var($email, FILTER_VALIDATE_EMAIL);
+        //vérifie si l'email est valide
+        $verif = filter_var($email, FILTER_VALIDATE_EMAIL);
+        //affiche un message en fonction du résultat
+        if ($verif === false) {
+            return "L'email n'est pas valide";
+        } else {
+            return "L'email est valide";
+        }
     }
 }
 
-$LE = new LEClass();
-echo $LE->escapeHtml("<p>èçì</p>");
-echo "<br>";
-echo $LE->escapeHtml("<p>èçì</p>");
-echo "<br>";
-echo $LE->arrayToString(["èçì", "èçì", "èçì"]);
-echo "<br>";
-echo $LE->verifyEmail("ethan.lachaud@gmail.com");
-echo "<br>";
-echo $LE->verifyEmail("ethan.lachaudgmail.com");
-echo "<br>";
-echo $LE->verifyEmail("ethan.lachaud@gmailcom");
-echo "<br>";
-echo $LE->verifyEmail("ethan.lachaud@gmail..com");
+$LE = new LE();
+echo($LE->mettreMajuscule("test"));
+echo(" | ");
+echo($LE->mettreMajuscule("éèçàù"));
+echo("<br>");
+echo($LE->charactereSpeciaux("test"));
+echo(" | ");
+echo($LE->charactereSpeciaux("&<>\"'"));
+echo("<br>");
+echo($LE->tableauEnString(["test", "test2", "test3"]));
+echo("<br>");
+echo($LE->verifEmail("test"));
+echo(" | ");
+echo($LE->verifEmail("test.test"));
+echo(" | ");
+echo($LE->verifEmail("test@test"));
+echo(" | ");
+echo($LE->verifEmail("test@test.com"));
+

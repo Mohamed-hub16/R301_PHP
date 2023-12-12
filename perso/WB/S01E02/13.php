@@ -1,5 +1,6 @@
 <?php
 class LetterChecker {
+
     public static function checkLetter($lettre) {
 
         switch (strtolower($lettre)) {
@@ -26,5 +27,7 @@ class LetterChecker {
         Ensuite on met $isVoyelle a true si oui et a false sinon
         Et du coup a la fin $resultat c'est "voyelle" ou "consonne" en fonction de $isVoyelle
     */
-
 }?>
+<?php
+echo LetterChecker::checkLetter("A");
+?>

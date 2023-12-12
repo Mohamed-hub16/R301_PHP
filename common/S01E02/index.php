@@ -347,7 +347,7 @@ class LetterChecker {
         Ensuite on met $isVoyelle a true si oui et a false sinon
         Et du coup a la fin $resultat c'est "voyelle" ou "consonne" en fonction de $isVoyelle
     */
-    
+
 
 
 }?>

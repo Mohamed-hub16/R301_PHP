@@ -20,8 +20,7 @@ which implements I and I2
 with a hello() method and and a simple world() method (which respectively return "Hello A " and "World A!"), type their returns as strings.
 
  */
-namespace G4\Interfaces;
-class A implements I, I2
+class A implements \G4\Interfaces\I, \G4\Interfaces\I2
 {
     const NAME = "A";
     public $name = "A";
@@ -79,7 +78,7 @@ class B extends A
         return "World B!";
     }
 
-    use C {
+    use \G4\Traits\C {
         hello as helloC;
         world as worldC;
     }
@@ -109,13 +108,12 @@ trait C
 
 }
 
-namespace 
-
-#[Attribute]
+namespace G4\Classes;
+#[\Attribute]
 class R301Attribute{
 
 }
-
+namespace G4\Classes;
 //Make B use C and call the methods from A, B, C (echo the returned strings).
 $objetA = new A("","");
 $objetB = new B("","");

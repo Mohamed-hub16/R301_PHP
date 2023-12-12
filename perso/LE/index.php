@@ -5,7 +5,10 @@ or each item below) which:
 Outputs a given string in capital letters, working with special characters (like "èçì…").
 Escapes a given HTML string into their safe character equivalents.
 Converts a given array as a string, all values being separated by ", ".
-Verifies that a given string is a correct email.*/
+Verifies that a given string is a correct email.
+Returns the current class name used as a string when an instance of the current class is used as a string (if it is Stringable).
+Returns the last character of a string parameter.
+*/
 
 namespace LE;
 
@@ -49,24 +52,39 @@ class LE
             return "L'email est valide";
         }
     }
+
+    public function __toString()
+    {
+        //retourne le nom de la classe
+        return __CLASS__;
+    }
+
+    public function lastChar($chaine)
+    {
+        //retourne le dernier caractère de la chaine
+        return substr($chaine, -1);
+    }
 }
 
-$LE = new LE();
-echo($LE->mettreMajuscule("test"));
-echo(" | ");
-echo($LE->mettreMajuscule("éèçàù"));
+$LEU = new LE();
+echo($LEU->mettreMajuscule("test"));
 echo("<br>");
-echo($LE->charactereSpeciaux("test"));
+echo($LEU->charactereSpeciaux("test"));
 echo(" | ");
-echo($LE->charactereSpeciaux("&<>\"'"));
+echo($LEU->charactereSpeciaux("&<>\"'"));
 echo("<br>");
-echo($LE->tableauEnString(["test", "test2", "test3"]));
+echo($LEU->tableauEnString(["test", "test2", "test3"]));
 echo("<br>");
-echo($LE->verifEmail("test"));
+echo($LEU->verifEmail("test"));
 echo(" | ");
-echo($LE->verifEmail("test.test"));
+echo($LEU->verifEmail("test.test"));
 echo(" | ");
-echo($LE->verifEmail("test@test"));
+echo($LEU->verifEmail("test@test"));
 echo(" | ");
-echo($LE->verifEmail("test@test.com"));
+echo($LEU->verifEmail("test@test.com"));
+echo("<br>");
+echo($LEU);
+echo("<br>");
+echo($LEU->lastChar("test"));
+?>
 

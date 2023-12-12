@@ -6,7 +6,9 @@ Outputs a given string in capital letters, working with special characters (like
 Escapes a given HTML string into their safe character equivalents.
 Converts a given array as a string, all values being separated by ", ".
 Verifies that a given string is a correct email.
-Returns the current class name used as a string when an instance of the current class is used as a string (if it is Stringable).*/
+Returns the current class name used as a string when an instance of the current class is used as a string (if it is Stringable).
+Returns the last character of a string parameter.
+*/
 
 namespace LE;
 
@@ -56,6 +58,12 @@ class LE
         //retourne le nom de la classe
         return __CLASS__;
     }
+
+    public function lastChar($chaine)
+    {
+        //retourne le dernier caractère de la chaine
+        return substr($chaine, -1);
+    }
 }
 
 $LEU = new LE();
@@ -76,5 +84,7 @@ echo(" | ");
 echo($LEU->verifEmail("test@test.com"));
 echo("<br>");
 echo($LEU);
+echo("<br>");
+echo($LEU->lastChar("test"));
 ?>
 

@@ -3,10 +3,12 @@
 <?php
 
 // Définition d'une classe TestClass
-class TestClass {
+class TestClass
+{
 
     // Méthode pour obtenir la valeur du paramètre 'test' de la requête GET
-    public function getTestValue() {
+    public function getTestValue()
+    {
         // Vérifie si la clé 'test' existe dans les paramètres de requête GET
         if (isset($_GET['test'])) {
             // Si 'test' est défini, retourne sa valeur

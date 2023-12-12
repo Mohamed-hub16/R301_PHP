@@ -3,7 +3,7 @@
         'name' => 'sebas/test',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'ff5ed647951d2361ed176cbbaa243b1dba8e527a',
+        'reference' => '0f85fe02944026da2772277010265c55ead51b61',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'phpstan/phpstan' => array(
-            'pretty_version' => '1.10.48',
-            'version' => '1.10.48.0',
-            'reference' => '087ed4b5f4a7a6e8f3bbdfbfe98ce5c181380bc6',
+            'pretty_version' => '1.10.49',
+            'version' => '1.10.49.0',
+            'reference' => '9367ba4c4f6ad53e9efb594d74a8941563caccf6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpstan/phpstan',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'sebas/test' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'ff5ed647951d2361ed176cbbaa243b1dba8e527a',
+            'reference' => '0f85fe02944026da2772277010265c55ead51b61',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

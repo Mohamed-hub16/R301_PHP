@@ -21,7 +21,9 @@ $obj->methodName();
 */
 ?>
 
-//3 et 4
+<br>
+
+
 <?php
 
 // Defines an abstract class
@@ -66,7 +68,8 @@ $sortedArray = sortArray([0, 2, 1, 0, 58, 7]);
 print_r($sortedArray);
 ?>
 
-//5
+<br>
+
 <?php
 /* MARCHE PAS
 // on creer une classe qui represente une base de donnée :
@@ -158,7 +161,9 @@ class ImageGenerator {
 ImageGenerator::generateImage();
 */
 ?>
-//7)
+
+<br>
+
 <?php
 
 
@@ -171,7 +176,9 @@ $objet = new MaClasse();
 // Appeler la méthode ecrireDansFichier avec un nom de fichier (par exemple, sortie.html)
 $objet->ecrireDansFichier('sortie.html');
 ?>
-// 8)
+
+<br>
+
 <?php
 
 /* Marche pas
@@ -186,7 +193,8 @@ $objetRedirection->effectuerRedirection();
 */
 ?>
 
-// 9 et 10
+<br>
+
 <?php
 
 //9 class method that returns the type of an given, untyped parameter
@@ -208,7 +216,9 @@ echo "Type of 42: $typeParameter1\n"; // Output: Type of $intValue: integer
 $typeParameter2 = $obj->getTypeOfTheParameter("Hello, World!");
 echo "Type of Hello, World! : $typeParameter2\n"; // Output: Type of $strValue: string
 ?>
-//10
+
+<br>
+
 <?php
 /* MARCHE PAS
 //10 class method that returns an array containing the name of the current host, server and client IP, and request method
@@ -246,7 +256,8 @@ echo "Request Method: " . $requestInfo['request_method'] . "<br>";
 
 */
 ?>
-//Question 11 page 2 Php :
+
+<br>
 
 <?php
 
@@ -268,7 +279,7 @@ $testValue = $testObject->getTestValue();
 echo "The value of 'test' parameter is: $testValue";
 ?>
 
-//Question 12 page 2 Php :
+<br>
 
 <?php
 class MemoryUsage {
@@ -318,7 +329,9 @@ $memoryUsage = $memoryUsageObject->getMemoryUsage();
 echo "Current Memory Usage: {$memoryUsage['current_memory']}\n";
 echo "Maximum Memory Allowed: {$memoryUsage['max_memory']}\n";
 ?>
-//13
+
+<br>
+
 <?php
 class LetterChecker {
     public static function checkLetter($lettre) {

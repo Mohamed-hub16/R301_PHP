@@ -53,8 +53,6 @@ class LE
 
 $LE = new LE();
 echo($LE->mettreMajuscule("test"));
-echo(" | ");
-echo($LE->mettreMajuscule("éèçàù"));
 echo("<br>");
 echo($LE->charactereSpeciaux("test"));
 echo(" | ");

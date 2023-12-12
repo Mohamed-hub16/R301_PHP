@@ -1,5 +1,4 @@
 <?php
-print "ok";
 $randomArray = array_fill(0,1000,random_int(0,1000));
 // activer le loopback -> php -S 127.0.0.1:8000
 ?>

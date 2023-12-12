@@ -15,7 +15,7 @@ class TestClass
             return $_GET['test'];
         } else {
             // Si 'test' n'est pas défini, retourne une valeur par défaut 'DefaultTestValue'
-            return 'DefaultTestValue';
+            return 'DefautTestValue';
         }
     }
 }

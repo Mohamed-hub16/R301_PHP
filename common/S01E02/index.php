@@ -347,10 +347,12 @@ class LetterChecker {
         Ensuite on met $isVoyelle a true si oui et a false sinon
         Et du coup a la fin $resultat c'est "voyelle" ou "consonne" en fonction de $isVoyelle
     */
+}
 
+echo LetterChecker::checkLetter("A");
 
+?>
 
-}?>
 //14
 <?php
 class iterationNombre {
@@ -370,8 +372,11 @@ class iterationNombre {
     Ca s'arrête d'afficher quand le nombre arrive à la limite
 */
 
+echo iterationNombre::afficheIteration(10);
 
 ?>
+
+
 //15
 <?php
 class NumberChecker {
@@ -395,5 +400,6 @@ class NumberChecker {
         } while ($index < $longueurTableau);
     }
 }
+echo NumberChecker::verifierNombresImpairs([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 ?>
 

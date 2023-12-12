@@ -7,8 +7,16 @@ function fusion($tab1, $tab2)
     return $tab3;
 }
 
+// Afficher les 3 tableaux
+$tab1 = array(1, 2, 3);
+$tab2 = array(4, 5, 6);
+$tab3 = fusion($tab1, $tab2);
+print_r($tab1);
+print_r($tab2);
+print_r($tab3);
 
-// Retourne un tableau contenant le nom du fichier actuel, le nom de la classe et le nom de la méthode
+
+//  de la méthodeRetourne un tableau contenant le nom du fichier actuel, le nom de la classe et le nom
 function getInfo()
 {
     // Récupérer le nom du fichier
@@ -27,6 +35,13 @@ function getInfo()
         'methodName' => $methodName
     );
 }
+
+// jeu de test
+print_r(getInfo());
+
+
+
+
 
 
 // preg_split() decoupe le tableau en caractères UNICODE | array_reverse() inverse le tableau | implode() rassemble les caractères en une chaine de caractères

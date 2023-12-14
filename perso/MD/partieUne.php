@@ -50,6 +50,8 @@ $inverserChaine = fn($chaine) => implode('', array_reverse(preg_split('//u', $ch
 $chaine = "èçì… Hello World!";
 $chaineInverse = $inverserChaine($chaine);
 
+echo $chaineInverse;
+
 
 class MaClasse implements Stringable
 {

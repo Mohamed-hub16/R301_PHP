@@ -1,5 +1,5 @@
 <?php
-
+namespace G4\Interfaces;
 //1 A simple I interface with only a hello() method signature.
 interface I
 {
@@ -13,18 +13,23 @@ interface I2
     public function world();
 }
 
+namespace G4\Classes;
 /* 3
 A simple A class:
 which implements I and I2
 with a hello() method and and a simple world() method (which respectively return "Hello A " and "World A!"), type their returns as strings.
 
  */
-
-class A implements I, I2
+class A implements \G4\Interfaces\I, \G4\Interfaces\I2
 {
     const NAME = "A";
     public $name = "A";
 
+    public R301Attribute $R301Attribute;
+
+    public function __construct(public string $first, public string $second ){
+        
+    }
 
     public function hello()
     {
@@ -43,6 +48,18 @@ class A implements I, I2
 
     }
 
+    public function countTo10(){
+        for ($j=0; $j<=9 ; $j++ ) {
+            yield $j+1;
+        }
+    }
+
+    public function displayCountTo10 (){
+        $generator = $this->countTo10();
+        foreach ($generator as $i) {
+            echo $i;
+        }
+    }
 }
 
 //A simple B class which inherits from A and overloads both methods (methods respectively return "Hello B " and "World B!").
@@ -61,7 +78,7 @@ class B extends A
         return "World B!";
     }
 
-    use C {
+    use \G4\Traits\C {
         hello as helloC;
         world as worldC;
     }
@@ -73,6 +90,7 @@ class B extends A
 }
 
 //A simple C trait with the same methods as A (which respectively return "Hello C " and "World C!").
+namespace G4\Traits;
 trait C
 {
     //public $name = "C";*
@@ -90,9 +108,15 @@ trait C
 
 }
 
+namespace G4\Classes;
+#[\Attribute]
+class R301Attribute{
+
+}
+namespace G4\Classes;
 //Make B use C and call the methods from A, B, C (echo the returned strings).
-$objetA = new A();
-$objetB = new B();
+$objetA = new A("","");
+$objetB = new B("","");
 
 echo $objetA->hello() . " " . $objetA->world();
 echo $objetB->hello() . " " . $objetB->world();
@@ -100,7 +124,7 @@ echo $objetB->helloC() . " " . $objetB->worldC();
 
 echo $objetA->getName();
 echo $objetB->getName();
-
+$objetA->displayCountTo10();
 
 //echo $objetA->arrow("Test");
 

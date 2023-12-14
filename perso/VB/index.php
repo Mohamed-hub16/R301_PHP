@@ -1,5 +1,5 @@
 <?php
-    function trier_tableau_par_cle_decroissante ($tableau){ 
+    function trier_tableau_par_cle_decroissante ($tableau){
         krsort($tableau); //trie le tableau par clé décroissante
         return $tableau;
     }
@@ -15,6 +15,7 @@
     ;
     }
     }
+
     function transforme_texte_en_format_titre ($element){
         
         if (is_string($element) && strlen($element)>2){ // vérifie que l'élement du tableau est une chaîne de caractère et non un caractere simple
@@ -28,7 +29,8 @@
     function tableau_element_to_title_case ($tableau){
         return array_map('transforme_texte_en_format_titre', $tableau); // applique la fonction "transforme_texte_en_format_titre" à chaque élément du tableau
     }
-
+$tableau = ["test", 3, 'c', "lLaA"];
+print_r(tableau_element_to_title_case ($tableau));
 ?>
    
    

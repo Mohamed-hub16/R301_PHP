@@ -60,14 +60,8 @@ echo B . LIMITEUR_QUESTION;
 echo  B.B;
 /*----------------------------------3----------------------------------------*/
 
-<<<<<<< HEAD
 //Héritage d'une autre classe, classe abstraite et implémentation d'une interface.
-=======
-<br>
 
-
-<?php
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
 
 // Déclaration d'une classe abstraite nommée AbstractClass
 abstract class AbstractClass {
@@ -134,93 +128,11 @@ print_r($sortedArray);
 echo B. LIMITEUR_QUESTION;
 echo  B.B;
 
-<<<<<<< HEAD
-=======
-<br>
-
-<?php
-/* MARCHE PAS
-// on creer une classe qui represente une base de donnée :
-class DatabaseHandler {
-    private $dbHost;
-    private $dbName;
-    private $dbUsername;
-    private $dbPassword;
-    private $conn; //conn sera de type pdo, pour se connecter a la database
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
 
 /*-----------------------------------------5--------------------------------------------------------------*/
 //Méthode de classe qui se connecte à votre base de données en utilisant PDO (utilise MySQL), crée une table, y insère des données, puis les lit et les renvoie.
 
 
-<<<<<<< HEAD
-=======
-    // on creer une methode pour creer une table (table d'exemple avec students)
-    public function createTable() {
-        $sql = "CREATE TABLE IF NOT EXISTS students (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    name VARCHAR(50) NOT NULL,
-                    age INT
-                )"; // on met la requete dans une chaine de caracteres
-
-        try {
-            $this->conn->exec($sql); // on execute la requete
-            echo "Table created successfully<br>"; // si ça a marché
-        } catch (PDOException $e) {
-            die("Table creation failed: " . $e->getMessage()); // sinon
-        }
-    }
-
-    // maintenant la methode pour insert des données
-    public function insert() {
-
-        $sql = "INSERT INTO students VALUES ('Tom', 19)"; // la requete dans une chaine de caracteres
-
-    }
-
-    // enfin, une methode pour select les données de la bdd
-    public function select() {
-
-        $sql = "SELECT * FROM students"; // la requete dans une chaine de caracteres
-
-    }
-}
-
-$dbHandler = new DatabaseHandler("","","",""); // on creer un objet de la classe vu precedement
-$dbHandler->createTable(); // puis on appelle les methodes dans l'ordre
-$dbHandler->insert();
-$data = $dbHandler->select();
-
-echo "<pre>";
-print_r($data);
-echo "</pre>";
-
-?>
-
-//6
-<?php
-class ImageGenerator {
-    public static function generateImage() {
-        $image = imagecreatetruecolor(400,200);
-        $blueBackground = imagecolorallocate($image,0,0,255);
-        imagefill($image,0,0, $blueBackground);
-
-        $redColor = imagecolorallocate($image,255,0,0);
-        imagefilledellipse($image,200,100,150,150,$redColor);
-
-        header('Content-Type: image/jpeg');
-        imagejpeg($image);
-
-    }
-}
-ImageGenerator::generateImage();
-*/
-?>
-
-<br>
-
-<?php
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
 
 /*-----------------------------------------7----------------------------------------*/
 //Méthode de classe qui écrit le contenu de www.google.com dans un fichier.
@@ -234,18 +146,10 @@ $objet = new MaClasse();
 // Appeler la méthode ecrireDansFichier avec un nom de fichier (par exemple, sortie.html)
 echo LIMITEUR_QUESTION . B . "Question 7 : " .B;
 $objet->ecrireDansFichier('sortie.html');
-<<<<<<< HEAD
 echo B . LIMITEUR_QUESTION;
 echo B . B;
 /*------------------------------------------8------------------------------------------------------*/
 //Méthode de classe qui génère les en-têtes HTTP pour rediriger (HTTP 302) vers un autre script (ajoutez un lien vers votre script).
-=======
-?>
-
-<br>
-
-<?php
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
 
 // Classe RedirectHelper
 class RedirectHelper {
@@ -262,14 +166,8 @@ class RedirectHelper {
 // Instanciation de la classe RedirectHelper
 $redirectHelper = new RedirectHelper();
 
-<<<<<<< HEAD
 // Appel de la méthode redirect avec l'URL de destination "redirection.php"
 //$redirectHelper->redirect("redirection.php");
-=======
-<br>
-
-<?php
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
 
 
 /*--------------------------------------------------9---------------------------------------------*/
@@ -292,20 +190,10 @@ echo LIMITEUR_QUESTION . B . "Question 9 : " . B . "Type de 42 : $typeParameter1
 
 // Appel de la méthode pour le paramètre chaîne de caractères (string)
 $typeParameter2 = $obj->getTypeOfTheParameter("Hello, World!");
-<<<<<<< HEAD
+
 echo "Type de Hello, World! : $typeParameter2" . B . LIMITEUR_QUESTION; // Sortie : Type de $strValue : string
 echo B .B;
 /*--------------------------------------------10------------------------------------------------*/
-=======
-echo "Type of Hello, World! : $typeParameter2\n"; // Output: Type of $strValue: string
-?>
-
-<br>
-
-<?php
-/* MARCHE PAS
-//10 class method that returns an array containing the name of the current host, server and client IP, and request method
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
 
 //Méthode de classe qui renvoie un tableau contenant le nom de l'hôte actuel, le serveur et l'adresse IP du client, ainsi que la méthode de requête.
 
@@ -335,15 +223,7 @@ echo B . LIMITEUR_QUESTION .B .B;
 
 /*----------------------------------------11----------------------------------------------------*/
 
-<<<<<<< HEAD
 //Méthode de classe qui renvoie la valeur actuellement transmise via une requête HTTP GET nommée "test".
-=======
-*/
-?>
-
-<br>
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
-
 
 // Définition d'une classe TestClass
 class TestClass
@@ -372,14 +252,10 @@ $testValue = $testObject->getTestValue();
 // Affichage de la valeur du paramètre 'test'
 echo LIMITEUR_QUESTION . B . "Question 11 : " . B . "The value of 'test' parameter is: $testValue" . B . LIMITEUR_QUESTION .B .B;
 
-<<<<<<< HEAD
+
 /*-------------------------------------------------12---------------------------------------------------------------------------*/
 // Méthode de classe qui renvoie la RAM actuellement utilisée et la RAM maximale que votre script peut utiliser (maximum PHP, pas celui actuel).
-=======
-<br>
 
-<?php
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
 class MemoryUsage {
     // Méthode statique qui récupère l'utilisation actuelle de la mémoire et la limite maximale de mémoire autorisée par PHP.
     public static function getMemoryUsage() {
@@ -403,29 +279,16 @@ $memoryInfo = MemoryUsage::getMemoryUsage();
 // Affiche la quantité de mémoire actuellement utilisée en octets.
 echo LIMITEUR_QUESTION . B . "Question 12 : " .B . "Memory Used: " . $memoryInfo['memory_used'] . " bytes" .B;
 
-<<<<<<< HEAD
+
 // Affiche la limite maximale de mémoire autorisée pour le script PHP.
 echo "Memory Max: " . $memoryInfo['memory_max'] . B . LIMITEUR_QUESTION .B . B;
 
 
 /*-------------------------------------------------------13-------------------------------------------------*/
 //Méthode de classe qui utilise une structure switch(), suivie d'une structure match(), pour déterminer si un paramètre de lettre d'entrée est une voyelle ou une consonne.
-class LetterChecker
-{
 
-    public static function checkLetter($lettre)
-    {
-=======
-echo "Current Memory Usage: {$memoryUsage['current_memory']}\n";
-echo "Maximum Memory Allowed: {$memoryUsage['max_memory']}\n";
-?>
-
-<br>
-
-<?php
 class LetterChecker {
     public static function checkLetter($lettre) {
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
 
         switch (strtolower($lettre)) {
             case 'a':
@@ -452,20 +315,12 @@ class LetterChecker {
         Et du coup a la fin $resultat c'est "voyelle" ou "consonne" en fonction de $isVoyelle
     */
 }
-<<<<<<< HEAD
+
 echo LIMITEUR_QUESTION . B . "Question 13 : " . B . LetterChecker::checkLetter("A") .B . LIMITEUR_QUESTION .B.B;
 
 /*------------------------------------------14------------------------------------------------------------------------------------------*/
 //Méthode de classe qui utilise une structure while() interrompue par un mot-clé break une fois qu'elle atteint un certain paramètre entier d'entrée après avoir affiché tous les nombres bouclés précédemment.
-=======
 
-echo LetterChecker::checkLetter("A");
-
-?>
-
-//14
-<?php
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
 class iterationNombre {
     public static function afficheIteration($limite) {
         $nombre = 1;
@@ -486,18 +341,11 @@ echo LIMITEUR_QUESTION . B . "Question 14 : " .B;
 iterationNombre::afficheIteration(10);
 echo B . LIMITEUR_QUESTION .B.B;
 
-<<<<<<< HEAD
+
 /*----------------------------------------------------------15---------------------------------------------------------------------------------------*/
 //Méthode de classe qui utilise une construction do() employant le mot-clé continue pour imprimer les valeurs numériques d'un tableau donné qui sont impaires.
-=======
-echo iterationNombre::afficheIteration(10);
-
-?>
 
 
-//15
-<?php
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
 class NumberChecker {
     public static function verifierNombresImpairs($tableau) {
         $index = 0;
@@ -518,15 +366,13 @@ class NumberChecker {
             $index++;
         } while ($index < $longueurTableau);
     }
-<<<<<<< HEAD
+
 
 }
 echo LIMITEUR_QUESTION . B . "Question 15 : " .B;
 NumberChecker::verifierNombresImpairs([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 echo B . LIMITEUR_QUESTION .B.B;
-=======
-}
-echo NumberChecker::verifierNombresImpairs([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-?>
->>>>>>> bc5fbb41b9979de8714c959c45f659d46cbff976
+
+
+
 

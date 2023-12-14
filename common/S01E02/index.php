@@ -1,166 +1,140 @@
 
 <?php
-/* MARCHE PAS
-// 1. CHEMIN_DU_FICHIER: /g:/Mon Drive/A2/Exercices/PHP/jpp_git/index.php
-// DÉBUT: abpxx6d04wxr
-// Inclure le fichier contenant la définition de l'objet
-include 'chemin/vers/autre/fichier.php';
+//Je met le 6 parce que je préfère.
+define('LIMITEUR_QUESTION', '**************************************************'); // Pour la lisibilité des questions réponses
+define('B', "<br>"); //Pour saut de ligne car flemme de réecrire à chaque fois.
+/*----------------------6----------------------------------*/
+//Méthode de classe qui crée une image JPEG représentant un cercle rouge avec le texte "JE SUIS [vos initiales] & J'AIME PHP" sur un fobnd bleu, puis la sauvegarde sur le disque.
+class ImageCreator {
 
-// Créer une instance de l'objet
-$obj = new ClassName();
+    // Méthode statique pour créer une image
+    public static function createImage($initials) {
+        // Création d'une image avec un fond bleu
+        $image = imagecreate(400, 300);
+        $background_color = imagecolorallocate($image, 0, 0, 255); // Couleur bleue pour le fond
 
-// Accéder à la constante de la classe
-$valeurConstante = ClassName::CONSTANT_NAME;
+        // Définition de la couleur rouge
+        $red = imagecolorallocate($image, 255, 0, 0);
 
-//2.
+        // Dessin d'un cercle rouge
+        imagefilledellipse($image, 200, 150, 200, 200, $red);
+
+        // Ajout du texte avec les initiales
+        $text_color = imagecolorallocate($image, 255, 255, 255); // Couleur blanche pour le texte
+        $text = "JE SUIS $initials & J'AIME PHP";
+
+        // Ajout du texte à l'image
+        imagestring($image, 5, 50, 120, $text, $text_color);
+
+        // Sauvegarde de l'image sur le disque
+        imagejpeg($image, 'output.jpg');
+
+        // Retourne le chemin de l'image sauvegardée
+        return 'output.jpg';
+    }
+}
+
+// Utilisation de la méthode avec des initiales spécifiques
+$imagePath = ImageCreator::createImage("MM");
+echo LIMITEUR_QUESTION . B . "Question 6 : " . B;
+// Affiche l'image dans le navigateur
+echo '<img src="' . $imagePath . '" alt="Image créée" />' . B . LIMITEUR_QUESTION;
+echo  B.B;
+/*--------------1--------------------------------------------------------*/
+
+// Inclure le fichier contenant la définition de la classe
+include 'object.php';
+// Instancier la classe
+$exempleObjet = new ExempleClasse("Je suis une variable de classe !");
+// Accéder à la constante de classe
+echo LIMITEUR_QUESTION. B . "Question 1:" . B .  ExempleClasse::CONSTANTE_EXEMPLE . B;
 // Accéder à la variable de classe
-$valeurVariable = $obj->classVariable;
+echo "Variable de classe : " . $exempleObjet->variableExemple . B . LIMITEUR_QUESTION;
+echo  B.B;
+/*-----------------2---------------------------------------------------------*/
 
-// Appeler une méthode de l'objet
-$obj->methodName();
-*/
-?>
+// Appeler une méthode qui utilise à la fois la constante et la variable
+echo LIMITEUR_QUESTION . B . "Question 2 : " .B;
+$exempleObjet->afficherInfo();
+echo B . LIMITEUR_QUESTION;
+echo  B.B;
+/*----------------------------------3----------------------------------------*/
 
-//3 et 4
-<?php
+//Héritage d'une autre classe, classe abstraite et implémentation d'une interface.
 
-// Defines an abstract class
+// Déclaration d'une classe abstraite nommée AbstractClass
 abstract class AbstractClass {
+    // Déclaration d'une méthode abstraite dans la classe abstraite
     abstract public function abstractMethod();
 }
 
-// Defines an interface
+// Déclaration d'une interface nommée MyInterface
 interface MyInterface {
+    // Déclaration d'une méthode dans l'interface
     public function interfaceMethod();
 }
 
-// Defines a class that inherits from an abstract class and implements an interface
+// Déclaration d'une classe nommée MyClass qui étend la classe abstraite AbstractClass
+// et implémente l'interface MyInterface
 class MyClass extends AbstractClass implements MyInterface {
+
+    // Implémentation de la méthode abstraite de la classe abstraite
     public function abstractMethod() {
-        print("Text from the abstract method of the abstract class!\n");
+        print("Texte de la méthode abstraite de la classe abstraite !\n");
     }
 
+    // Implémentation de la méthode de l'interface
     public function interfaceMethod() {
-        print("Text from the interface method\n");
+        print("Texte de la méthode de l'interface\n");
     }
 }
 
+// Instanciation d'un objet de la classe MyClass
 $obj = new MyClass();
 
-$obj->abstractMethod();    // Calls the abstract method
-$obj->interfaceMethod();   // Calls the interface method
+// Appel de la méthode abstraite implémentée dans la classe MyClass
+echo LIMITEUR_QUESTION . B . "Question 3 : " . B;
+$obj->abstractMethod();
+echo B;
+// Appel de la méthode de l'interface implémentée dans la classe MyClass
+$obj->interfaceMethod();
+echo B . LIMITEUR_QUESTION;
+echo  B.B;
 
-// Function that sorts an array
+/*------------------------------------4-------------------------------------------------*/
+//Méthode de classe qui trie une table comme S01E01 avec une signature complète (types, types de retour, PHPDoc, etc.).
 /**
- * @param array $array array to be sorted
+ * Trie un tableau.
  *
- * @return array sorted array
+ * @param array $array tableau à trier
+ *
+ * @return array tableau trié
  */
 function sortArray(array $array){
+    // Utilise la fonction sort() pour trier le tableau.
     sort($array);
+
+    // Retourne le tableau trié.
     return $array;
 }
 
-// Calling the sorting function
+// Appel de la fonction de tri
 $sortedArray = sortArray([0, 2, 1, 0, 58, 7]);
+
+echo LIMITEUR_QUESTION . B . "Question 4 : " .B;
+// Affiche le tableau trié.
 print_r($sortedArray);
-?>
+echo B. LIMITEUR_QUESTION;
+echo  B.B;
 
-//5
-<?php
-/* MARCHE PAS
-// on creer une classe qui represente une base de donnée :
-class DatabaseHandler {
-    private $dbHost;
-    private $dbName;
-    private $dbUsername;
-    private $dbPassword;
-    private $conn; //conn sera de type pdo, pour se connecter a la database
 
-    // on fait une methode constructeur pour faire un connection a la bdd
-    // (et on renvoie le msg d'erreur si cela n'a pas marché)
-    public function __construct(String $host, String $hostname, String $username, String $password ) {
-        $this->dbHost = $host;
-        $this->dbName = $hostname;
-        $this->dbUsername = $username;
-        $this->dbPassword = $password;
+/*-----------------------------------------5--------------------------------------------------------------*/
+//Méthode de classe qui se connecte à votre base de données en utilisant PDO (utilise MySQL), crée une table, y insère des données, puis les lit et les renvoie.
 
-        try {
-            $this->conn = new PDO(
-                "mysql:host={$this->dbHost}; 
-                dbname={$this->dbName}",
-                $this->dbUsername,
-                $this->dbPassword);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            die("Connection failed: " . $e->getMessage());
-        }
-    }
 
-    // on creer une methode pour creer une table (table d'exemple avec students)
-    public function createTable() {
-        $sql = "CREATE TABLE IF NOT EXISTS students (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    name VARCHAR(50) NOT NULL,
-                    age INT
-                )"; // on met la requete dans une chaine de caracteres
 
-        try {
-            $this->conn->exec($sql); // on execute la requete
-            echo "Table created successfully<br>"; // si ça a marché
-        } catch (PDOException $e) {
-            die("Table creation failed: " . $e->getMessage()); // sinon
-        }
-    }
-
-    // maintenant la methode pour insert des données
-    public function insert() {
-
-        $sql = "INSERT INTO students VALUES ('Tom', 19)"; // la requete dans une chaine de caracteres
-
-    }
-
-    // enfin, une methode pour select les données de la bdd
-    public function select() {
-
-        $sql = "SELECT * FROM students"; // la requete dans une chaine de caracteres
-
-    }
-}
-
-$dbHandler = new DatabaseHandler("","","",""); // on creer un objet de la classe vu precedement
-$dbHandler->createTable(); // puis on appelle les methodes dans l'ordre
-$dbHandler->insert();
-$data = $dbHandler->select();
-
-echo "<pre>";
-print_r($data);
-echo "</pre>";
-
-?>
-
-//6
-<?php
-class ImageGenerator {
-    public static function generateImage() {
-        $image = imagecreatetruecolor(400,200);
-        $blueBackground = imagecolorallocate($image,0,0,255);
-        imagefill($image,0,0, $blueBackground);
-
-        $redColor = imagecolorallocate($image,255,0,0);
-        imagefilledellipse($image,200,100,150,150,$redColor);
-
-        header('Content-Type: image/jpeg');
-        imagejpeg($image);
-
-    }
-}
-ImageGenerator::generateImage();
-*/
-?>
-//7)
-<?php
-
+/*-----------------------------------------7----------------------------------------*/
+//Méthode de classe qui écrit le contenu de www.google.com dans un fichier.
 
 // Inclure le fichier classe.php
 include 'classe.php';
@@ -169,30 +143,38 @@ include 'classe.php';
 $objet = new MaClasse();
 
 // Appeler la méthode ecrireDansFichier avec un nom de fichier (par exemple, sortie.html)
+echo LIMITEUR_QUESTION . B . "Question 7 : " .B;
 $objet->ecrireDansFichier('sortie.html');
-?>
-// 8)
-<?php
+echo B . LIMITEUR_QUESTION;
+echo B . B;
+/*------------------------------------------8------------------------------------------------------*/
+//Méthode de classe qui génère les en-têtes HTTP pour rediriger (HTTP 302) vers un autre script (ajoutez un lien vers votre script).
 
-/* Marche pas
-// Inclure le fichier redirection.php
-include 'redirection.php';
+// Classe RedirectHelper
+class RedirectHelper {
 
-// Instancier la classe RedirectionClass
-$objetRedirection = new RedirectionClass();
+    // Méthode pour effectuer une redirection vers une URL donnée
+    public function redirect($url) {
+        // En-tête HTTP pour la redirection (HTTP 302)
+        header("Location: $url", true, 302);
+        // Arrête l'exécution du script après la redirection
+        exit;
+    }
+}
 
-// Appeler la méthode d'effectuerRedirection
-$objetRedirection->effectuerRedirection();
-*/
-?>
+// Instanciation de la classe RedirectHelper
+$redirectHelper = new RedirectHelper();
 
-// 9 et 10
-<?php
+// Appel de la méthode redirect avec l'URL de destination "redirection.php"
+//$redirectHelper->redirect("redirection.php");
 
-//9 class method that returns the type of an given, untyped parameter
+
+/*--------------------------------------------------9---------------------------------------------*/
+//Méthode de classe qui renvoie le type d'un paramètre donné, non typé.
 class MyClassQ9 {
+    // Méthode pour obtenir le type du paramètre
     public function getTypeOfTheParameter($parameter) {
-        // Use gettype() function to get the type of the parameter
+        // Utilisez la fonction gettype() pour obtenir le type du paramètre
         $type = gettype($parameter);
 
         return $type;
@@ -201,127 +183,110 @@ class MyClassQ9 {
 
 $obj = new MyClassQ9();
 
-
+// Appel de la méthode pour le paramètre entier (integer)
 $typeParameter1 = $obj->getTypeOfTheParameter(42);
-echo "Type of 42: $typeParameter1\n"; // Output: Type of $intValue: integer
+echo LIMITEUR_QUESTION . B . "Question 9 : " . B . "Type de 42 : $typeParameter1" . B; // Sortie : Type de $intValue : integer
 
+// Appel de la méthode pour le paramètre chaîne de caractères (string)
 $typeParameter2 = $obj->getTypeOfTheParameter("Hello, World!");
-echo "Type of Hello, World! : $typeParameter2\n"; // Output: Type of $strValue: string
-?>
-//10
-<?php
-/* MARCHE PAS
-//10 class method that returns an array containing the name of the current host, server and client IP, and request method
+echo "Type de Hello, World! : $typeParameter2" . B . LIMITEUR_QUESTION; // Sortie : Type de $strValue : string
+echo B .B;
+/*--------------------------------------------10------------------------------------------------*/
 
-class RequestInfo
-{
-    public static function getRequestInfo()
-    {
-        $info = array();
+//Méthode de classe qui renvoie un tableau contenant le nom de l'hôte actuel, le serveur et l'adresse IP du client, ainsi que la méthode de requête.
 
-        // Get the host name
-        $info['host'] = $_SERVER['HTTP_HOST'];
+class InfoUtilisateur {
 
-        // Get the server IP address
-        $info['server_ip'] = $_SERVER['SERVER_ADDR'];
+    // Méthode statique qui retourne un tableau d'informations utilisateur
+    public static function getInfoUtilisateur() {
+        return array(
+            'hote' => gethostname(), // Obtient le nom de l'hôte local
+            'ip_serveur' => self::getServerIP(), // Obtient l'adresse IP du serveur en utilisant le nom d'hôte
+            'ip_client' => $_SERVER['REMOTE_ADDR'] ?? '', // Obtient l'adresse IP du client ou une chaîne vide si non définie
+            'methode_requete' => $_SERVER['REQUEST_METHOD'] ?? '' // Obtient la méthode de la requête HTTP ou une chaîne vide si non définie
+        );
+    }
 
-        // Get the client IP address
-        $info['client_ip'] = $_SERVER['REMOTE_ADDR'];
-
-        // Get the request method
-        $info['request_method'] = $_SERVER['REQUEST_METHOD'];
-
-        return $info;
+    // Méthode privée qui obtient l'adresse IP du serveur en utilisant le nom d'hôte
+    private static function getServerIP() {
+        return gethostbyname($_SERVER['SERVER_NAME']);
     }
 }
 
-// Usage
-$requestInfo = RequestInfo::getRequestInfo();
+// Exemple d'utilisation
+$infoUtilisateur = InfoUtilisateur::getInfoUtilisateur();
+echo LIMITEUR_QUESTION . B . "Question 10 : " .B;
+print_r($infoUtilisateur);
+echo B . LIMITEUR_QUESTION .B .B;
 
-// Display the information
-echo "Host: " . $requestInfo['host'] . "<br>";
-echo "Server IP: " . $requestInfo['server_ip'] . "<br>";
-echo "Client IP: " . $requestInfo['client_ip'] . "<br>";
-echo "Request Method: " . $requestInfo['request_method'] . "<br>";
+/*----------------------------------------11----------------------------------------------------*/
 
-*/
-?>
-//Question 11 page 2 Php :
+//Méthode de classe qui renvoie la valeur actuellement transmise via une requête HTTP GET nommée "test".
 
-<?php
 
-class TestClass {
+// Définition d'une classe TestClass
+class TestClass
+{
 
-    public function getTestValue() {
+    // Méthode pour obtenir la valeur du paramètre 'test' de la requête GET
+    public function getTestValue()
+    {
+        // Vérifie si la clé 'test' existe dans les paramètres de requête GET
         if (isset($_GET['test'])) {
+            // Si 'test' est défini, retourne sa valeur
             return $_GET['test'];
         } else {
-            return 'DefaultTestValue';
+            // Si 'test' n'est pas défini, retourne une valeur par défaut 'DefaultTestValue'
+            return 'DefautTestValue';
         }
     }
 }
 
+// Instanciation de la classe TestClass
 $testObject = new TestClass();
 
+// Appel de la méthode pour obtenir la valeur du paramètre 'test'
 $testValue = $testObject->getTestValue();
 
-echo "The value of 'test' parameter is: $testValue";
-?>
+// Affichage de la valeur du paramètre 'test'
+echo LIMITEUR_QUESTION . B . "Question 11 : " . B . "The value of 'test' parameter is: $testValue" . B . LIMITEUR_QUESTION .B .B;
 
-//Question 12 page 2 Php :
-
-<?php
+/*-------------------------------------------------12---------------------------------------------------------------------------*/
+// Méthode de classe qui renvoie la RAM actuellement utilisée et la RAM maximale que votre script peut utiliser (maximum PHP, pas celui actuel).
 class MemoryUsage {
+    // Méthode statique qui récupère l'utilisation actuelle de la mémoire et la limite maximale de mémoire autorisée par PHP.
+    public static function getMemoryUsage() {
+        // Obtient la quantité de mémoire actuellement utilisée (en octets).
+        $memoryUsed = memory_get_usage(true);
 
-    public function getMemoryUsage() {
-        $currentMemory = memory_get_usage(true);
+        // Obtient la limite maximale de mémoire autorisée pour le script PHP.
+        $memoryMax = ini_get('memory_limit');
 
-        $maxMemory = $this->convertToBytes(ini_get('memory_limit'));
-
+        // Retourne un tableau associatif contenant les informations sur l'utilisation de la mémoire.
         return [
-            'current_memory' => $this->formatBytes($currentMemory),
-            'max_memory' => $this->formatBytes($maxMemory),
+            'memory_used' => $memoryUsed,
+            'memory_max' => $memoryMax
         ];
-    }
-
-    private function convertToBytes($value) {
-        $unit = strtoupper(substr($value, -1));
-        $value = (int)$value;
-        switch ($unit) {
-            case 'G':
-                $value = 1024;
-            case 'M':
-                $value= 1024;
-            case 'K':
-                $value = 1024;
-        }
-        return $value;
-    }
-
-    private function formatBytes($bytes, $precision = 2) {
-        $units = array('B', 'KB', 'MB', 'GB', 'TB');
-
-        $bytes = max($bytes, 0);
-        $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
-        $pow = min($pow, count($units) - 1);
-
-        $bytes /= (1 << (10 * $pow));
-
-        return round($bytes, $precision) . ' ' . $units[$pow];
     }
 }
 
-$memoryUsageObject = new MemoryUsage();
+// Utilisation de la méthode pour obtenir les informations sur l'utilisation de la mémoire.
+$memoryInfo = MemoryUsage::getMemoryUsage();
 
-$memoryUsage = $memoryUsageObject->getMemoryUsage();
+// Affiche la quantité de mémoire actuellement utilisée en octets.
+echo LIMITEUR_QUESTION . B . "Question 12 : " .B . "Memory Used: " . $memoryInfo['memory_used'] . " bytes" .B;
 
-echo "Current Memory Usage: {$memoryUsage['current_memory']}\n";
-echo "Maximum Memory Allowed: {$memoryUsage['max_memory']}\n";
-?>
-//13
-<?php
-class LetterChecker {
-    public static function checkLetter($lettre) {
+// Affiche la limite maximale de mémoire autorisée pour le script PHP.
+echo "Memory Max: " . $memoryInfo['memory_max'] . B . LIMITEUR_QUESTION .B . B;
+
+
+/*-------------------------------------------------------13-------------------------------------------------*/
+//Méthode de classe qui utilise une structure switch(), suivie d'une structure match(), pour déterminer si un paramètre de lettre d'entrée est une voyelle ou une consonne.
+class LetterChecker
+{
+
+    public static function checkLetter($lettre)
+    {
 
         switch (strtolower($lettre)) {
             case 'a':
@@ -329,7 +294,7 @@ class LetterChecker {
             case 'i':
             case 'o':
             case 'u':
-                $isVoyelle= true;
+                $isVoyelle = true;
                 break;
             default:
                 $isVoyelle = false;
@@ -347,17 +312,16 @@ class LetterChecker {
         Ensuite on met $isVoyelle a true si oui et a false sinon
         Et du coup a la fin $resultat c'est "voyelle" ou "consonne" en fonction de $isVoyelle
     */
+}
+echo LIMITEUR_QUESTION . B . "Question 13 : " . B . LetterChecker::checkLetter("A") .B . LIMITEUR_QUESTION .B.B;
 
-
-
-}?>
-//14
-<?php
+/*------------------------------------------14------------------------------------------------------------------------------------------*/
+//Méthode de classe qui utilise une structure while() interrompue par un mot-clé break une fois qu'elle atteint un certain paramètre entier d'entrée après avoir affiché tous les nombres bouclés précédemment.
 class iterationNombre {
     public static function afficheIteration($limite) {
         $nombre = 1;
         while (true) {
-            echo $nombre . "<br>";
+            echo $nombre . "\n";
             if ($nombre == $limite) {
                 break;
             }
@@ -369,11 +333,12 @@ class iterationNombre {
     Du coup, dans une boucle while on affiche un nombre qui va de 1 a la limite
     Ca s'arrête d'afficher quand le nombre arrive à la limite
 */
+echo LIMITEUR_QUESTION . B . "Question 14 : " .B;
+iterationNombre::afficheIteration(10);
+echo B . LIMITEUR_QUESTION .B.B;
 
-
-?>
-//15
-<?php
+/*----------------------------------------------------------15---------------------------------------------------------------------------------------*/
+//Méthode de classe qui utilise une construction do() employant le mot-clé continue pour imprimer les valeurs numériques d'un tableau donné qui sont impaires.
 class NumberChecker {
     public static function verifierNombresImpairs($tableau) {
         $index = 0;
@@ -388,12 +353,15 @@ class NumberChecker {
             }
 
             if ($valeur % 2 !== 0) {    //Du coup on check si le resultat de la division euclidienne (si on rentre dans le if c'est un nombre impaire)
-                echo "$valeur est impair<br>";
+                echo "$valeur est impair\n";
             }
 
             $index++;
         } while ($index < $longueurTableau);
     }
+
 }
-?>
+echo LIMITEUR_QUESTION . B . "Question 15 : " .B;
+NumberChecker::verifierNombresImpairs([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+echo B . LIMITEUR_QUESTION .B.B;
 

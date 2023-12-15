@@ -14,6 +14,7 @@ interface I2
 }
 
 namespace G4\Classes;
+use G4\Traits\C;
 /* 3
 A simple A class:
 which implements I and I2
@@ -44,6 +45,7 @@ class A implements \G4\Interfaces\I, \G4\Interfaces\I2
 
     public function getName(){
         echo self::NAME;
+        echo $this->name;
         echo static::NAME;
 
     }
@@ -78,9 +80,9 @@ class B extends A
         return "World B!";
     }
 
-    use \G4\Traits\C {
-        hello as helloC;
-        world as worldC;
+    use C {
+        C::hello as helloC;
+        C::world as worldC;
     }
 
 
@@ -93,8 +95,8 @@ class B extends A
 namespace G4\Traits;
 trait C
 {
-    //public $name = "C";*
-    //const NAME = "C";
+    public $traits_name = "C";
+    const TRAITSNAME = "C";
 
     public function hello()
     {
@@ -106,14 +108,14 @@ trait C
         return "World C!";
     }
 
+
 }
+
 
 namespace G4\Classes;
 #[\Attribute]
 class R301Attribute{
-
 }
-namespace G4\Classes;
 //Make B use C and call the methods from A, B, C (echo the returned strings).
 $objetA = new A("","");
 $objetB = new B("","");
@@ -121,11 +123,22 @@ $objetB = new B("","");
 echo $objetA->hello() . " " . $objetA->world();
 echo $objetB->hello() . " " . $objetB->world();
 echo $objetB->helloC() . " " . $objetB->worldC();
-
+echo "<br>";
 echo $objetA->getName();
+echo "<br>";
 echo $objetB->getName();
-$objetA->displayCountTo10();
+echo "<br>";
+$generatorA = $objetA->countTo10();
+foreach ($generatorA as $i) {
+    echo $i;
+}
+echo "<br>";
 
+$generatorB = $objetA->countTo10();
+foreach ($generatorB as $i) {
+    echo $i;
+}
+echo "<br>";
 //echo $objetA->arrow("Test");
 
 //Add class variables $name = "A" in class A and $name = "B" in class B and $name = "C" in trait C. And a CONSTANT class constant.

@@ -1,0 +1,41 @@
+<?php
+
+namespace G4\Classes;
+#[\Attribute]
+class R301Attribute{
+}
+
+require 'Autoloader.php';
+
+use G4\Classes\A;
+use G4\Classes\B;
+use G4\Traits\C;
+
+$objetA = new A("","");
+$objetB = new B("","");
+
+echo $objetA->hello() . " " . $objetA->world();
+echo $objetB->hello() . " " . $objetB->world();
+echo $objetB->helloC() . " " . $objetB->worldC();
+
+echo $objetA->getName();
+echo "<br>";
+echo $objetB->getName();
+$generatorA = $objetA->countTo10();
+foreach ($generatorA as $i) {
+    echo $i;
+}
+echo "<br>";
+
+$generatorB = $objetA->countTo10();
+foreach ($generatorB as $i) {
+    echo $i;
+}
+
+//echo $objetA->arrow("Test");
+
+//Add class variables $name = "A" in class A and $name = "B" in class B and $name = "C" in trait C. And a CONSTANT class constant.
+
+//Create an arrow function that takes a $inputString string as an argument and returns "Hello " . $input. Call it.
+$arrowFunction = fn($inputString) => "Hello " . $inputString;
+echo $arrowFunction("John");

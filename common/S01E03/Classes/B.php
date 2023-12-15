@@ -1,4 +1,7 @@
+<?php
 namespace G4\Classes;
+
+use G4\Traits\C;
 
 Class B extends A{
     public function hello(){

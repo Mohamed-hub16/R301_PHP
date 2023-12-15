@@ -11,3 +11,5 @@ Ouvrez-le avec un éditeur de texte.
 Faites ctrl + f et cherchez "extension=gd" puis enlevez le point virgule devant.
 Refaites ctrl + f et cherchez "extension_dir = "ext" puis, encore une fois, enlevez le point virgule devant.
 Relancez le serveur et tada ! ça marche.
+
+Si vous ne trouver pas le extension_dir = "ext", ajouter le dans votre php.ini

@@ -2,7 +2,7 @@
 
 ##php.ini
 <br>
-Aller dans le dossier ou bous avez décompresser le dossier de téléchargement de php, renomer le php.ini-developement en php.ini
+Aller dans le dossier ou vous avez décompresser le dossier de téléchargement de php, renomer le php.ini-developement en php.ini
 et faire les modifications dessus ci-dessous. (A la fin php.ini final sera dispo).
 
 ### pour faire afficher une image Jpeg en utilisant l'extension GD :

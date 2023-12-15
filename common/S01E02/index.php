@@ -131,8 +131,37 @@ echo  B.B;
 
 /*-----------------------------------------5--------------------------------------------------------------*/
 //Méthode de classe qui se connecte à votre base de données en utilisant PDO (utilise MySQL), crée une table, y insère des données, puis les lit et les renvoie.
+echo LIMITEUR_QUESTION . B . "Question 5 : " .B;
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=php', 'sa', 'sa1@');
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    // Création de la table users
+    $bdd->exec('
+        CREATE TABLE IF NOT EXISTS `users` (
+            `id` INT(11) NOT NULL AUTO_INCREMENT,
+            `name` VARCHAR(255) NOT NULL,
+            `email` VARCHAR(255) NOT NULL,
+            PRIMARY KEY (`id`)
+        )
+    ');
 
+    // Insertion de données dans la table users
+    $bdd->exec('
+        INSERT INTO `users` (`name`, `email`) VALUES
+        ("John Doe", "john.doe@example.com")
+    ');
+
+    // Récupération des valeurs dans la table users
+    $resultats = $bdd->query('SELECT * FROM users');
+    echo "Valeurs dans la table users : \n";
+    while ($row = $resultats->fetch(PDO::FETCH_ASSOC)) {
+        echo $row['name'] . " - " . $row['email'] . "\n";
+    }
+
+} catch (PDOException $e) {
+    die('Erreur : ' . $e->getMessage());
+}
 
 /*-----------------------------------------7----------------------------------------*/
 //Méthode de classe qui écrit le contenu de www.google.com dans un fichier.

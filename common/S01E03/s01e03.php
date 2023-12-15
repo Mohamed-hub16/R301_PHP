@@ -14,9 +14,8 @@ use G4\Traits\C;
 $objetA = new A("","");
 $objetB = new B("","");
 
-echo $objetA->hello() . " " . $objetA->world();
-echo $objetB->hello() . " " . $objetB->world();
-echo $objetB->helloC() . " " . $objetB->worldC();
+echo $objetA. "<br>";
+echo $objetB. "<br>";
 
 echo $objetA->getName();
 echo "<br>";

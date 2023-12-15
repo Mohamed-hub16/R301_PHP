@@ -181,7 +181,7 @@ class Comptable implements Countable
         $this->elements = $elements;
     }
 
-    public function count()
+    public function count():
     {
         return count($this->elements);
     }

@@ -18,6 +18,10 @@ class A implements I, I2
     public function __construct(public string $first, public string $second)
     {
     }
+    public function __toString(): string
+    {
+        return 'Class A: ' . $this->getName();
+    }
 
     public function hello()
     {

@@ -11,7 +11,7 @@ class G4A implements Stringable
 {
     public function mettreMajuscule($chaine)    {
         //changer tout les caractères en majuscule
-        $chaineMajuscule = strtoupper($chaine);
+        $chaineMajuscule = mb_strtoupper($chaine, 'UTF-8');
         return $chaineMajuscule;
     }
 
@@ -181,7 +181,7 @@ class Comptable implements Countable
         $this->elements = $elements;
     }
 
-    public function count():
+    public function count() : int
     {
         return count($this->elements);
     }
@@ -191,6 +191,8 @@ class Comptable implements Countable
 $G4A = new G4A();
 echo("texte en majuscule : ");
 echo($G4A->mettreMajuscule("test"));
+echo(" | ");
+echo($G4A->mettreMajuscule("èçìàùéâêîôûëïüÿæœ"));
 echo("<br>");
 
 echo("caractères spéciaux : ");

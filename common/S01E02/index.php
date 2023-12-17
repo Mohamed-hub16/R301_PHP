@@ -138,7 +138,7 @@ try {
 
     // Création de la table users
     $bdd->exec('
-        CREATE TABLE IF NOT EXISTS `users` (
+        CREATE TABLE IF NOT EXISTS `solid_users` (
             `id` INT(11) NOT NULL AUTO_INCREMENT,
             `name` VARCHAR(255) NOT NULL,
             `email` VARCHAR(255) NOT NULL,
@@ -148,12 +148,12 @@ try {
 
     // Insertion de données dans la table users
     $bdd->exec('
-        INSERT INTO `users` (`name`, `email`) VALUES
-        ("John Doe", "john.doe@example.com")
+        INSERT INTO `solid_users` (`name`, `email`) VALUES
+        ("John2 Doe", "john2.doe@example.com")
     ');
 
     // Récupération des valeurs dans la table users
-    $resultats = $bdd->query('SELECT * FROM users');
+    $resultats = $bdd->query('SELECT * FROM solid_users');
     echo "Valeurs dans la table users : \n";
     while ($row = $resultats->fetch(PDO::FETCH_ASSOC)) {
         echo $row['name'] . " - " . $row['email'] . "\n";

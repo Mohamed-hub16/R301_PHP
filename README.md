@@ -16,3 +16,28 @@ Refaites ctrl + f et cherchez "extension_dir = "ext" puis, encore une fois, enle
 Relancez le serveur et tada ! ça marche.
 
 Si vous ne trouvez pas le extension_dir = "ext", ajoutez le dans votre php.ini au niveau des extensions
+
+
+### pour faire des requete sql
+dans php.ini, decommenter extension=pdo_mysql
+
+ensuite aller sur : https://dev.mysql.com/downloads/installer/ 
+telecharger la premiere version: Windows (x86, 32-bit), MSI Installer
+executer
+choisir :server only, puis suivant, execute, next
+les parametre tcp/ip ne sont pas a toucher donc next, next
+en password mettre sa1@: mdp qui permet de se connecter a my sql
+ajouter un utilisateur nomme : sa avec en mdp sa1@: pour notre cas
+puis next,next,next,execute
+apres la fin de l'instalation , finish
+
+aller dans MySQL command line et entrer le mdp presenter avant
+
+!!! n'oublier jamais de mettre un ";" en fin de requete sinon cela ne fonctionnera jamais dans MySQL command line !!!
+
+créé une bdd dans notre cas php : create database php;
+pour voir les bdd : show databases; si cela affiche une database nommé php c'est terminer 
+pour voir les information dans une bdd  select [colonne] from [database].[tables];
+
+
+

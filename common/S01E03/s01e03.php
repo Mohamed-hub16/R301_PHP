@@ -16,10 +16,14 @@ $objetB = new B("","");
 
 echo $objetA. "<br>";
 echo $objetB. "<br>";
+echo $objetB->__toStringC(). "<br>";
+
 
 echo $objetA->getName();
 echo "<br>";
 echo $objetB->getName();
+echo "<br>";
+
 $generatorA = $objetA->countTo10();
 foreach ($generatorA as $i) {
     echo $i;
@@ -30,6 +34,7 @@ $generatorB = $objetA->countTo10();
 foreach ($generatorB as $i) {
     echo $i;
 }
+echo "<br>";
 
 //echo $objetA->arrow("Test");
 
@@ -38,3 +43,10 @@ foreach ($generatorB as $i) {
 //Create an arrow function that takes a $inputString string as an argument and returns "Hello " . $input. Call it.
 $arrowFunction = fn($inputString) => "Hello " . $inputString;
 echo $arrowFunction("John");
+echo "<br>";
+echo $objetA->hello()->world();
+
+
+echo "<br>";
+$MethodName = B::helloMethod();
+echo $MethodName;

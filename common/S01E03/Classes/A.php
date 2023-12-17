@@ -25,13 +25,16 @@ class A implements I, I2
 
     public function hello()
     {
-        return "Hello " . self::NAME;
+        echo "Hello " . self::NAME . " ";
+        return $this; // Retourne l'instance actuelle pour permettre l'enchaînement
     }
 
     public function world()
     {
-        return "World " . self::NAME . "!";
+        echo "World " . self::NAME . "!";
+        return $this; // Retourne l'instance actuelle pour permettre l'enchaînement
     }
+
 
     public function getName()
     {

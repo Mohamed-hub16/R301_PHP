@@ -38,6 +38,9 @@ aller dans MySQL command line et entrer le mdp presenter avant
 créé une bdd dans notre cas php : create database php;
 pour voir les bdd : show databases; si cela affiche une database nommé php c'est terminer 
 pour voir les information dans une bdd  select [colonne] from [database].[tables];
+pour supprimer une database : drop database [database];
+pour supprimer une table : drop table [database].[tables];
 
 
 
+### 

@@ -21,8 +21,12 @@ Class B extends A{
     use \G4\Traits\C {
         C::hello as helloC;
         C::world as worldC;
+        C::__toString as __toStringC;
     }
     public function arrow($inputString){
         return "Hello " .   $inputString;
+    }
+    public static function helloMethod(){
+        return "Hello";
     }
 }

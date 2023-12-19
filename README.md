@@ -52,3 +52,57 @@ Pour supprimer une database : drop database [database];
 Pour supprimer une table : drop table [database].[tables];
 
 ### 
+
+
+### installation composer
+lien pour le telecharger : https://getcomposer.org/download/
+prendre composer-setup
+choissir pour tous les utilisateur
+en developpeur mode puis next,next,install, finish
+
+si vous ouvrer un terminal est que vous metter : composer -v vous devrier avoir :
+   ______
+  / ____/___  ____ ___  ____  ____  ________  _____
+ / /   / __ \/ __ `__ \/ __ \/ __ \/ ___/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ /
+\____/\____/_/ /_/ /_/ .___/\____/____/\___/_/
+
+
+cas probleme : personnelement j'ai du installer 7 zip du a un probleme ou composer ne fonctionner pas
+
+pour réaliser les test :
+laravel : dans votre repertoire perso : ouvrer un terminal
+faite ces commande : composer create-project laravel/laravel iut-pw-laravel
+		       cd iut-pw-laravel
+                       php artisan serve
+cela doit permettre de pouvoir ouvrir un site laravel
+normalement il ne devrait y avoir aucune erreur sinon venir m'en parler
+
+symfony : dans votre repertoire perso : ouvrer un terminal
+faite ces commandes : composer create-project symfony/skeleton iut-pw-symfony
+		      cd iut-pw-symfony
+		      composer require webapp
+                      cd public
+                      php -S 127.0.0.1:8000
+pour composer require webapp appuyer sur : Y
+cela doit ouvrir une page en symphony
+
+!!!ne pas push dans common!!! car sinon probleme donc git ignore
+phpStan: 
+ouvrir un terminal dans perso et faire :
+composer init : permet de gerer la configuration dans composer.json
+donner un nom a votre vendor exemple : sebas/s01e04] cela va correspond a mon nom unilim et mon projet
+composer require --dev phpstan/phpstan : permet d'ajouter phpstan en tant que dependance
+
+pour tester phpstan ouvrer un terminal dans 
+php vendor/bin/phpstan analyse --level max iut-pw-part1
+				     [niveau] [fichier]
+cela devrais afficher des erreur. 
+
+!!!!!!!!!!!!!!!C'EST NORMAL NE PAS S'INQUIETER!!!!!!!!!!!!!!!!!!!!
+phpStan est un outil qui permet de verifier le code PHP cela permet donc de voir les probleme de language grace a différent niveau de regle (ici, max) 
+cela peut etre du a des appel de methode null ou inexistantes, des erreur de type, des probleme de retour de fonction et des probleme d'arguments.
+
+
+
+

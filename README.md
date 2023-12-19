@@ -1,4 +1,4 @@
-### Eplications pour le TP...
+### Explications pour le TP...
 
 ### Pour lancer index.html :
 
@@ -7,8 +7,9 @@ php -S 127.0.0.1:8000
 
 ### php.ini :
 
-Aller dans le dossier où vous avez décompressé le dossier de téléchargement de php, renomer le php.ini-developement en php.ini
-et faire les modifications dessus ci-dessous. (A la fin php.ini final sera dispo).
+Allez dans le dossier où vous avez décompressé le dossier de téléchargement de php, renomez le fichier "php.ini-developement" en "php.ini"
+
+Faire les modifications dessus ci-dessous. (A la fin php.ini final sera dispo).
 
 ### Pour le TP1 : 
 
@@ -31,13 +32,14 @@ Dans php.ini, dé-commentez "extension=pdo_mysql",
 
 Ensuite, allez sur : https://dev.mysql.com/downloads/installer/ 
 Téléchargez la premiere version : Windows (x86, 32-bit), MSI Installer,
-Exécutez,
-Choisissez : server only, puis suivant, execute, next,
-Les paramètres TCP/IP ne sont pas à toucher donc next, next
+Exécutez l'installeur,
+Choisissez "server only" puis cliquez sur next -> execute -> next
+Les paramètres TCP/IP ne sont pas à toucher donc cliquez sur next -> next
 En password mettre sa1@ (mdp qui permet de se connecter à my sql)
-Ajouter un utilisateur nommé sa avec le mdp sa1@
-puis next, next, next, execute,
-Après la fin de l'installation, finish
+Cliquez sur add user pour ajouter un utilisateur 
+Nommez l'utilisateur sa avec le mdp sa1@
+Puis cliquez sur next -> next -> next -> execute
+Après la fin de l'installation, cliquez sur finish
 
 Allez dans MySQL command line et entrez le mdp présenté avant
 

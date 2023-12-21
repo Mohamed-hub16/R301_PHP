@@ -136,9 +136,11 @@ PHPStan est un outil qui permet de verifier la qualité du code PHP (erreur de t
 
 
 Ouvrez un terminal dans votre répertoire perso,
-Tappeze cette commande :
+Tappeze cette commande a la racine des fichier ou vous vouler faire vos teste (la ou il y a iut-pw-part1):
     composer require --dev phpunit/phpunit ;
-
+ensuite pour executer les tests faire:
+./vendor/bin/phpunit
 Et voilà.
+faite un teste dans iut-pw-part1 de cette comande.
 
 

@@ -13,7 +13,7 @@
         <li><a href="S01E01fichier.php">Exercice fichier</a></li>
         <li><a href="S01E01tableau.php">Exercice tableau</a></li>
         <li><a href="S01E01Operateur.php">Exercice operateur</a></li>
-        <li><a href="S01E01Constructeur.php">Exercice contructeur</a></li>
+        <li><a href="S01E01Constructeur.php">Exercice contructions</a></li>
         <li><a href="S01E01.php">Exercice classe</a></li>
     </ul>
 

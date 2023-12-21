@@ -1,11 +1,17 @@
 <?php
 
-
 namespace G4A;
 
 use Countable;
 use Exception;
 use Stringable;
+
+define('LIMITEUR_QUESTION', '**************************************************');
+define('B', "<br>");
+
+echo LIMITEUR_QUESTION . B;
+echo "Question 5 : créez une classe (dans un namespace) avec plusieurs méthodes :" . B;
+echo LIMITEUR_QUESTION . B;
 
 class G4A implements Stringable
 {
@@ -189,131 +195,136 @@ class Comptable implements Countable
 
 
 $G4A = new G4A();
-echo("texte en majuscule : ");
-echo($G4A->mettreMajuscule("test"));
-echo(" | ");
-echo($G4A->mettreMajuscule("èçìàùéâêîôûëïüÿæœ"));
-echo("<br>");
 
-echo("caractères spéciaux : ");
+echo "Texte en majuscule :" . B;
+echo "test -> ";
+echo($G4A->mettreMajuscule("test"));
+echo B;
+echo "èçìàùéâêîôûëïüÿæœ -> ";
+echo($G4A->mettreMajuscule("èçìàùéâêîôûëïüÿæœ"));
+
+echo B . LIMITEUR_QUESTION . B;
+echo "Caractères spéciaux :" . B;
 echo($G4A->charactereSpeciaux("test"));
 echo(" | ");
-echo($G4A->charactereSpeciaux("&<>\"'"));
-echo("<br>");
+echo($G4A->charactereSpeciaux("&<>\"'")); // présentation a faire !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-echo("tableau en string : ");
+echo B .LIMITEUR_QUESTION . B;
+echo "Tableau en string :" . B;
+echo "['test', 'test2', 'test3'] ->" ;
 echo($G4A->tableauEnString(["test", "test2", "test3"]));
-echo("<br>");
 
-echo("vérification email : ");
+echo B .LIMITEUR_QUESTION . B;
+echo "Vérication email :" . B;
+echo "test -> ";
 echo($G4A->verifEmail("test"));
-echo(" | ");
+echo B;
+echo "test.test -> ";
 echo($G4A->verifEmail("test.test"));
-echo(" | ");
+echo B;
+echo "test@test -> ";
 echo($G4A->verifEmail("test@test"));
-echo(" | ");
+echo B;
+echo "test@test.com -> ";
 echo($G4A->verifEmail("test@test.com"));
-echo("<br>");
 
-echo("dernier caractère : ");
+echo B .LIMITEUR_QUESTION . B;
+echo "Dernier caractère :" . B;
+echo "test -> ";
 echo($G4A->lastChar("test"));
-echo("<br>");
 
-echo ("fusion de tableau : ");
+echo B .LIMITEUR_QUESTION . B;
+echo "Fusion de tableau :" . B;
+echo "Tableau 1 = [1, 2, 3]" . B;
+echo "Tableau 2 = [4, 5, 6]" . B;
 $tab1 = array(1, 2, 3);
 $tab2 = array(4, 5, 6);
 $tab3 = $G4A->fusion($tab1, $tab2);
-echo '<pre>';
+echo "Tableau final :" . B;
 print_r($tab3);
-echo'</pre>';
-echo"<br>";
 
-echo ("info fichier : ");
-echo'<pre>';
+echo B .LIMITEUR_QUESTION . B;
+echo "Informations fichier : " . B;
 print_r($G4A->getInfo());
-echo'</pre>';
-echo"<br>";
 
-echo ("inversion chaines : ");
+echo B .LIMITEUR_QUESTION . B;
+echo "Inversion chaîne :" . B;
+echo "èçì… Hello World! -> ";
 echo ($G4A->inverserChaine("èçì… Hello World!"));
-echo"<br>";
 
-echo ("classe actuelle : ");
+echo B .LIMITEUR_QUESTION . B;
+echo "Classe actuelle :" . B;
 echo $G4A;
-echo"<br>";
 
-
-
-echo ("concaténation de chaines : ");
+echo B .LIMITEUR_QUESTION . B;
+echo "Concaténation de chaîne :" . B;
+echo "Hello + world + ! devient -> ";
 echo ($G4A->mergeStrings("Hello", " ", "World", "! \n"));
-echo"<br>";
 
-
-
-echo ("test variable vide : ");
-echo ("<<br>");
+echo B .LIMITEUR_QUESTION . B;
+echo "Variable vide :" . B;
+echo "Variable avec Hello world! -> ";
 echo ($G4A->isVariableEmpty("Hello World!"));// Appel de la fonction isVariableEmpty avec une variable vide et une variable non vide.
-echo ("<br>");
+echo B . "Variable vide -> ";
 echo ($G4A->isVariableEmpty(""));// Appel de la fonction isVariableEmpty avec une variable vide et une variable non vide.
-echo ("<br>");
 
-echo ("nom de la classe : ");
+echo B .LIMITEUR_QUESTION . B;
+echo "Nom de la classe :" . B;
 $myClass = new G4A();// Création d'une instance de la classe G4A.
 $myClass->printClassName();// Appel de la méthode printClassName de l'instance de la classe G4A.
-echo ("<br>");
 
+
+echo B .LIMITEUR_QUESTION . B;
+echo "Lancer une exeption :" . B;
 echo ("try catch : ");
  try {
         $G4A->throwException();// Appel de la fonction throwException.
     } catch (Exception $e) {// Gestion de l'exception levée.
         echo $e->getMessage();// Affichage du message de l'exception.
     }
-echo ("<br>");
 
-echo ("tableau trier par clé décroissante : ");
+
+echo B .LIMITEUR_QUESTION . B;
+echo "Tableau trié par clé décroissante :" . B;
 $tab4 = array("test", "test2", "test3");
-echo "<pre>";
 print "keys : ";
 print_r (array_keys($G4A->trier_tableau_par_cle_decroissante($tab4)));
-echo "</pre>";
 
-echo ("tableau de valeur pas présente dans le tableau 2 : ");
+echo B .LIMITEUR_QUESTION . B;
+echo "Valeur présente dans un tableau et pas dans un autre :" . B;
 $tab5= array("test", "test2", "test3");
 $tab6= array("test", "test2", "test5");
-echo "<pre>";
 print_r ($G4A->element_present_dans_tab1_et_pas_dans_tab2($tab5, $tab6));
-echo "</pre>";
-echo "<br>";
 
-echo ("transforme texte en format titre : ");
-echo "<pre>";
+echo B .LIMITEUR_QUESTION . B;
+echo "Transforme texte en format titre :" . B;
 print ($G4A->transforme_texte_en_format_titre("coucou"));
-echo "</pre>";
-echo "<br>";
 
-echo ("tableau transformé en format titre : ");
 $tableau = ["test", 3, 'c', "lLaA"];
-echo("<pre>");
 print_r($G4A->transforme_tableau_en_format_titre($tableau));
-echo("</pre>");
-echo "<br>";
 
+echo B .LIMITEUR_QUESTION . B;
+echo "Compter un type countable :" . B;
 //cas countable
 $comptable = new Comptable([1, 1, 1, 1]);
 $longueurComptable = $G4A->longueur($comptable);
 echo "Longueur de comptable : " . $longueurComptable;
-echo "<br>";
+
+echo B .LIMITEUR_QUESTION . B;
+echo "Taille d'un tableau :" . B;
 
 //cas tableau
 $tableau = array(1, 2, 3, 4, 5);
 echo "Longueur du tableau : " . $G4A->longueur($tableau);
-echo "<br>";
 
+echo B .LIMITEUR_QUESTION . B;
+echo "Nombre de caractères dans une chaîne :" . B;
 // cas string
 $chaine = "yo";
 echo "Longueur de la chaîne : " . $G4A->longueur($chaine);
-echo "<br>";
 
+echo B .LIMITEUR_QUESTION . B;
+echo "Longueur d'un nombre :" . B;
 // cas int
 $nombre = 14568;
 echo "Longueur du nombre : " . $G4A->longueur($nombre);

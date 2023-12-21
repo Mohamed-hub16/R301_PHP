@@ -118,6 +118,8 @@ Pour vérifier, cliquez sur le lien qui apparaît. Vous devriez arriver sur le s
 Ouvrez un terminal dans votre répertoire perso,
 Tappez cette commande : 
     composer init (permet de gerer la configuration dans composer.json)
+    si vous n'avez pas de vendor au même niveau que laravel et symphoni 
+    déplacé le vendor du iut-pw-laravel au même niveau que celui-ci et symphoni
 Donnez le nom au vendor sous la forme : prenom/s01e04 (remplacez prenom par votre prénom mdr)
 Tappez cette commande : 
     composer require --dev phpstan/phpstan (permet d'ajouter phpstan en tant que dépendance)

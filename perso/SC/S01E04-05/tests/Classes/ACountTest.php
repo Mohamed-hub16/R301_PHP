@@ -2,7 +2,7 @@
 use PHPUnit\Framework\TestCase;
 use G4AS\Class\A;
 
-class AHelloTest extends TestCase {
+class ACountTest extends TestCase {
     public function testCountTo10()
     {
         // Create an instance of class A

@@ -1,5 +1,5 @@
 <?php
-namespace G4\Interfaces;
+namespace G4AS\Interfaces;
 //1 A simple I interface with only a hello() method signature.
 interface I
 {
@@ -13,15 +13,15 @@ interface I2
     public function world();
 }
 
-namespace G4\Classes;
-use G4\Traits\C;
+namespace G4AS\Class;
+use G4AS\Trait\C;
 /* 3
 A simple A class:
 which implements I and I2
 with a hello() method and and a simple world() method (which respectively return "Hello A " and "World A!"), type their returns as strings.
 
  */
-class A implements \G4\Interfaces\I, \G4\Interfaces\I2
+class A implements \G4AS\Interfaces\I, \G4AS\Interfaces\I2
 {
     const NAME = "A";
     public $name = "A";
@@ -92,7 +92,7 @@ class B extends A
 }
 
 //A simple C trait with the same methods as A (which respectively return "Hello C " and "World C!").
-namespace G4\Traits;
+namespace G4AS\Trait;
 trait C
 {
     public $traits_name = "C";
@@ -112,7 +112,7 @@ trait C
 }
 
 
-namespace G4\Classes;
+namespace G4AS\Class;
 #[\Attribute]
 class R301Attribute{
 }

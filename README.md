@@ -5,30 +5,36 @@
 php -S 127.0.0.1:8000
 (à la racine)
 
-### php.ini :
+### Pour configurer le php.ini :
 
-Allez dans le dossier où vous avez décompressé le dossier de téléchargement de php, renomez le fichier "php.ini-developement" en "php.ini"
+Allez dans le dossier où vous avez décompressé le dossier de téléchargement de php,
+Renomez le fichier "php.ini-developement" en "php.ini"
 
-Faire les modifications dessus ci-dessous. (A la fin php.ini final sera dispo).
+Les autres modifications seront faites au fur et à mesure de ce readme
 
 ### Pour le TP1 : 
 
-Dé-commenter la ligne "extension=mbstring" (avec ctrl+f) en enlevant le ; devant
+Dans le fichier php.ini :
+
+Dé-commenter la ligne "extension=mbstring" en enlevant le ; devant
 
 ### Pour faire afficher une image Jpeg en utilisant l'extension GD :
 
-Rendez vous dans le fichier php.ini,
-Ouvrez-le avec un éditeur de texte,
-Faites ctrl + f et cherchez "extension=gd" puis enlevez le point virgule devant,
-Refaites ctrl + f et cherchez "extension_dir = "ext" puis, encore une fois, enlevez le point virgule devant,
+Dans le fichier php.ini :
+
+Dé-commentez la ligne "extension=gd" en enlevant le ; devant
+Dé-commentez la ligne "extension_dir = "ext"" en enlevant le ; devant
+
 Relancez le serveur et tada ! ça marche.
 
 Si vous ne trouvez pas le extension_dir = "ext", ajoutez le dans votre php.ini au niveau des extensions
 
+### Pour faire des requêtes SQL :
 
-### Pour faire des requêtes SQL
+Dans le fichier php.ini :
 
-Dans php.ini, dé-commentez "extension=pdo_mysql",
+Dé-commentez la ligne "extension=fileinfo" en enlevant le ; devant
+Dé-commentez la ligne "extension=zip" en enlevant le ; devant
 
 Ensuite, allez sur : https://dev.mysql.com/downloads/installer/ 
 Téléchargez la premiere version : Windows (x86, 32-bit), MSI Installer,
@@ -41,26 +47,40 @@ Nommez l'utilisateur sa avec le mdp sa1@
 Puis cliquez sur next -> next -> next -> execute
 Après la fin de l'installation, cliquez sur finish
 
-Allez dans MySQL command line et entrez le mdp présenté avant
+Ouvrez MySQL Command Line (depuis le menu de Windows) et entrez le mdp présenté avant
 
-!!! n'oubliez jamais de mettre un ";" en fin de requête sinon cela ne fonctionnera jamais dans MySQL command line !!!
+!!! N'oubliez jamais de mettre un ";" en fin de requête sinon cela ne fonctionnera jamais dans MySQL command line !!!
 
-Pour créer une BDD dans notre cas php : create database php;
-Pour voir les bdd : show databases; si cela affiche une database nommé php c'est terminé
-Pour voir les information dans une bdd : select [colonne] from [database].[tables];
+Dans MySQL command line, entrez "create database php;" (pour créer une base de données),
+Entrez "show databases;",
+Si cela affiche une database nommé php, c'est terminé.
+
+(Pour voir les information dans une bdd : select [colonne] from [database].[tables];
 Pour supprimer une database : drop database [database];
-Pour supprimer une table : drop table [database].[tables];
+Pour supprimer une table : drop table [database].[tables];)
 
-### 
+!!! Si jamais vous avez un message d'erreur en rapport avec le port, faire :
+Windows+r 
+Saisissez "services.msc" 
+Cherchez "Maria.db" 
+Désactivez Maria.db (clique droit -> "désactiver") !!!
 
 
-### installation composer
-lien pour le telecharger : https://getcomposer.org/download/
-prendre composer-setup
-choissir pour tous les utilisateur
-en developpeur mode puis next,next,install, finish
+### Pour installer composer :
 
-si vous ouvrer un terminal est que vous metter : composer -v vous devrier avoir :
+Dans le fichier php.ini :
+
+Dé-commentez la ligne "extension=pdo_mysql" en enlevant le ; devant
+
+Allez sur : https://getcomposer.org/download/
+Cliquez sur "composer-setup.exe",
+Lancez l'installeur,
+Choisissez "pour tous les utilisateurs"
+Choisissez le "mode developpeur" 
+Cliquez sur next -> next -> install -> next -> finish
+
+Pour vérifier, ouvrez un terminal et tapez la commande "composer -v".
+Ce joli dessin devrait apparaître :
    ______
   / ____/___  ____ ___  ____  ____  ________  _____
  / /   / __ \/ __ `__ \/ __ \/ __ \/ ___/ _ \/ ___/
@@ -68,41 +88,57 @@ si vous ouvrer un terminal est que vous metter : composer -v vous devrier avoir 
 \____/\____/_/ /_/ /_/ .___/\____/____/\___/_/
 
 
-cas probleme : personnelement j'ai du installer 7 zip du a un probleme ou composer ne fonctionner pas
+### Pour vérifier que composer fonctionne avec laravel :
 
-pour réaliser les test :
-laravel : dans votre repertoire perso : ouvrer un terminal
-faite ces commande : composer create-project laravel/laravel iut-pw-laravel
-		       cd iut-pw-laravel
-                       php artisan serve
-cela doit permettre de pouvoir ouvrir un site laravel
-normalement il ne devrait y avoir aucune erreur sinon venir m'en parler
+Ouvrez un terminal dans votre répertoire perso,
+Tappez ces commandes : 
+    composer create-project laravel/laravel iut-pw-laravel
+    cd iut-pw-laravel
+    php artisan serve
 
-symfony : dans votre repertoire perso : ouvrer un terminal
-faite ces commandes : composer create-project symfony/skeleton iut-pw-symfony
-		      cd iut-pw-symfony
-		      composer require webapp
-                      cd public
-                      php -S 127.0.0.1:8000
-pour composer require webapp appuyer sur : Y
-cela doit ouvrir une page en symphony
+Pour vérifier, cliquez sur le lien qui apparaît. Vous devriez arriver sur le site de laravel.
 
-!!!ne pas push dans common!!! car sinon probleme donc git ignore
-phpStan: 
-ouvrir un terminal dans perso et faire :
-composer init : permet de gerer la configuration dans composer.json
-donner un nom a votre vendor exemple : sebas/s01e04] cela va correspond a mon nom unilim et mon projet
-composer require --dev phpstan/phpstan : permet d'ajouter phpstan en tant que dependance
+### Pour vérifier que composer fonctionne avec symfony : 
 
-pour tester phpstan ouvrer un terminal dans 
-php vendor/bin/phpstan analyse --level max iut-pw-part1
-				     [niveau] [fichier]
-cela devrais afficher des erreur. 
+Ouvrez un terminal dans votre répertoire perso,
+Tappez ces commandes : 
+    composer create-project symfony/skeleton iut-pw-symfony
+	cd iut-pw-symfony
+	composer require webapp
+    cd public
+    php -S 127.0.0.1:8000
 
-!!!!!!!!!!!!!!!C'EST NORMAL NE PAS S'INQUIETER!!!!!!!!!!!!!!!!!!!!
-phpStan est un outil qui permet de verifier le code PHP cela permet donc de voir les probleme de language grace a différent niveau de regle (ici, max) 
-cela peut etre du a des appel de methode null ou inexistantes, des erreur de type, des probleme de retour de fonction et des probleme d'arguments.
+Pour vérifier, cliquez sur le lien qui apparaît. Vous devriez arriver sur le site de symfony.
+
+### Pour installer PHPStan :
+
+!!!Ne surtout pas push ce qui suis dans common!!! 
+!!!Mettre dans le git ignore!!!
+
+Ouvrez un terminal dans votre répertoire perso,
+Tappez cette commande : 
+    composer init (permet de gerer la configuration dans composer.json)
+    si vous n'avez pas de vendor au même niveau que laravel et symphoni 
+    déplacé le vendor du iut-pw-laravel au même niveau que celui-ci et symphoni
+Donnez le nom au vendor sous la forme : prenom/s01e04 (remplacez prenom par votre prénom mdr)
+Tappez cette commande : 
+    composer require --dev phpstan/phpstan (permet d'ajouter phpstan en tant que dépendance)
+
+Pour vérifier, ouvrez un terminal dans votre répertoire perso.
+Tappez cette commande :
+    php vendor/bin/phpstan analyse --level max iut-pw-part1
+				
+Des erreurs devraient apparaître, mais c'est normal, ne pas s'inquiéter !
+PHPStan est un outil qui permet de verifier la qualité du code PHP (erreur de type, des probleme de retour de fonction et des probleme d'arguments, etc.).
 
 
+### Pour installer PHPUnit :
+
+
+Ouvrez un terminal dans votre répertoire perso,
+Tappeze cette commande :
+    composer require --dev phpunit/phpunit ;
+
+Et voilà.
 
 

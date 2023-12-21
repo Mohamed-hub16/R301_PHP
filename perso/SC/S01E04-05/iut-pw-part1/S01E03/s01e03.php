@@ -1,15 +1,30 @@
 <?php
 
-namespace G4\Classes;
+namespace G4AS;
 #[\Attribute]
 class R301Attribute{
 }
+spl_autoload_register(function ($namespace) {
 
-require 'Autoloader.php';
+    /**
+     * explication autoloader:
+     * moyen de charger de manière automatique un fichier chaque fois qu'un namespace est manquant.
+     * le preg_match va essayer de rechercher des namespaces passé via un USE.
+     * Si il n'est pas trouvé alors l'autoloader va chercher à l'inclure en utilisant INCLUDE.
+     *
+     */
+    preg_match('/G4AS\\\\(?:Class|Trait|Interface)\\\\([^\\\\]+)/', $namespace, $resultats);
 
-use G4\Classes\A;
-use G4\Classes\B;
-use G4\Traits\C;
+    if(!empty($resultats[1])) {
+        include($resultats[1] . '.php');
+    }
+
+    // var_dump($namespace, $resultats); exit;
+
+});
+use G4AS\Class\A;
+use G4AS\Class\B;
+use G4AS\Trait\C;
 
 $objetA = new A("","");
 $objetB = new B("","");
@@ -44,7 +59,7 @@ echo "<br>";
 $arrowFunction = fn($inputString) => "Hello " . $inputString;
 echo $arrowFunction("John");
 echo "<br>";
-echo $objetA->hello()->world();
+echo $objetA->hello() . " " . $objetA->world();
 
 
 echo "<br>";

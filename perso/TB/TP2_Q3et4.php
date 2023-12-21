@@ -5,32 +5,32 @@ abstract class AbstractClass {
     abstract public function abstractMethod();
 }
 
-// Defines an interface
+// Definition d'une interface
 interface MyInterface {
     public function interfaceMethod();
 }
 
-// Defines a class that inherits from an abstract class and implements an interface
+// Definition d'une classe Myclass qui herite d'une classe abstraite et qui implemente une interface
 class MyClass extends AbstractClass implements MyInterface {
     public function abstractMethod() {
-        print("Text from the abstract method of the abstract class!\n");
+        print("Text from the abstract method of the abstract class !\n");
     }
 
     public function interfaceMethod() {
-        print("Text from the interface method\n");
+        print("Text from the interface method !\n");
     }
 }
 
 $obj = new MyClass();
 
-$obj->abstractMethod();    // Calls the abstract method
-$obj->interfaceMethod();   // Calls the interface method
+$obj->abstractMethod();    // Appel de la methode herite de la classe abstraite
+$obj->interfaceMethod();   // ppel de la methode qui implemente l'interface
 
 // Function that sorts an array
 /**
- * @param array $array array to be sorted
+ * @param array $array la liste qui va etre trie
  *
- * @return array sorted array
+ * @return array liste trie
  */
 function sortArray(array $array){
     sort($array);

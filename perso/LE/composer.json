@@ -1,15 +1,14 @@
 {
-    "name": "sebas/test",
-    "description": "test",
+    "name": "ethan/s01e04",
     "autoload": {
         "psr-4": {
-            "Sebas\\Test\\": "src/"
+            "Ethan\\S01e04\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Sébastien Colasse",
-            "email": "sebastien.colasse@etu.unilim.fr"
+            "name": "EthanLACHAUD",
+            "email": "ethan.lachaud@etu.unilim.fr"
         }
     ],
     "require-dev": {

@@ -1,14 +1,15 @@
 <?php
-declare(strict_types = 1);
-
 use PHPUnit\Framework\TestCase;
-use PW\Class\A;
+use G4AS\Class\A;
 
-final class ANameTest extends TestCase
-{
-    public function testAName(): void
+class ANameTest extends TestCase {
+    public function testGetName()
     {
-        $a = new A();
-        $this->assertSame($a->__toString(), 'a');
+        // Create an instance of class A
+        $a = new A("firstValue", "secondValue");
+
+        // Assert that the getName method returns the expected value
+        $expected = "Name is AA";
+        $this->assertEquals($expected, $a->getName());
     }
 }

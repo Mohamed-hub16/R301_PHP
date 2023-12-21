@@ -1,0 +1,1 @@
+{"version":1,"defects":{"G4ATest::testMettreMajuscule":8,"G4ATest::testCharactereSpeciaux":8,"G4ATest::testTableauEnString":8,"G4A\\G4ATest::testMettreMajuscule":8,"App\\Tests\\G4A\\G4ATest::testMettreMajuscule":8},"times":{"G4ATest::testMettreMajuscule":0.021,"G4A\\G4ATest::testMettreMajuscule":0.021,"App\\Tests\\G4A\\G4ATest::testMettreMajuscule":0.033}}

@@ -51,11 +51,13 @@ Ouvrez MySQL Command Line (depuis le menu de Windows) et entrez le mdp présent�
 
 !!! N'oubliez jamais de mettre un ";" en fin de requête sinon cela ne fonctionnera jamais dans MySQL command line !!!
 
-Pour créer une BDD dans notre cas php : create database php;
-Pour voir les bdd : show databases; si cela affiche une database nommé php c'est terminé
-Pour voir les information dans une bdd : select [colonne] from [database].[tables];
+Dans MySQL command line, entrez "create database php;" (pour créer une base de données),
+Entrez "show databases;",
+Si cela affiche une database nommé php, c'est terminé.
+
+(Pour voir les information dans une bdd : select [colonne] from [database].[tables];
 Pour supprimer une database : drop database [database];
-Pour supprimer une table : drop table [database].[tables];
+Pour supprimer une table : drop table [database].[tables];)
 
 !!! Si jamais vous avez un message d'erreur en rapport avec le port, faire :
 Windows+r 
@@ -128,5 +130,13 @@ Des erreurs devraient apparaître, mais c'est normal, ne pas s'inquiéter !
 PHPStan est un outil qui permet de verifier la qualité du code PHP (erreur de type, des probleme de retour de fonction et des probleme d'arguments, etc.).
 
 
+### Pour installer PHPUnit :
+
+
+Ouvrez un terminal dans votre répertoire perso,
+Tappeze cette commande :
+    composer require --dev phpunit/phpunit ;
+
+Et voilà.
 
 

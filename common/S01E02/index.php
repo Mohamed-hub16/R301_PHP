@@ -162,7 +162,7 @@ try {
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }
-
+echo B;
 /*-----------------------------------------7----------------------------------------*/
 //Méthode de classe qui écrit le contenu de www.google.com dans un fichier.
 

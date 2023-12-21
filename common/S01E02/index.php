@@ -35,7 +35,7 @@ class ImageCreator {
 }
 
 // Utilisation de la méthode avec des initiales spécifiques
-$imagePath = ImageCreator::createImage("MM");
+$imagePath = ImageCreator::createImage("SC");
 echo LIMITEUR_QUESTION . B . "Question 6 : " . B;
 // Affiche l'image dans le navigateur
 echo '<img src="' . $imagePath . '" alt="Image créée" />' . B . LIMITEUR_QUESTION;

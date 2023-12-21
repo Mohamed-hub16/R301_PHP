@@ -7,13 +7,13 @@ use G4AS\Trait\C;
 
 class A implements I, I2
 {
-    const NAME = "A";
-    public $name = self::NAME;
+    const NAME = "A";// donne une valeur à la constante NAME
+    public $name = self::NAME; // donne une valeur à la propriété name
 
     use C;
 
 
-    public function __construct(public string $first, public string $second)
+    public function __construct(public string $first, public string $second) //cree un constructeur avec deux paramètres
     {
     }
     public function __toString(): string

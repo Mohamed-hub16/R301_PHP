@@ -1,1 +1,4 @@
 .idea
+/common/S01E04-05/*
+!common/S01E04-05/tests
+!common/S01E04-05/phpunit.xml

@@ -36,8 +36,8 @@ echo LIMITEUR_QUESTION . B;
 $objetA = new A("","");
 $objetB = new B("","");
 
-echo $objetA. "<br>";
-echo $objetB. "<br>";
+echo $objetA . B;
+echo $objetB . B;
 echo $objetB->__toStringC(). "<br>";
 
 

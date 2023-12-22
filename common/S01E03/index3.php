@@ -117,32 +117,59 @@ namespace G4AS\Class;
 class R301Attribute{
 }
 //Make B use C and call the methods from A, B, C (echo the returned strings).
+
+define('LIMITEUR_QUESTION', '**************************************************');
+define('B', "<br>");
+
+echo LIMITEUR_QUESTION . B;
+echo "Travail sur les classes, les interfaces et les traits :" . B;
+echo LIMITEUR_QUESTION . B;
+
+echo "Nous avons une classe A, une classe B, un trait C, une interface I et une interface I2" . B;
+echo LIMITEUR_QUESTION . B;
+
 $objetA = new A("","");
 $objetB = new B("","");
 
-echo $objetA->hello() . " " . $objetA->world();
-echo $objetB->hello() . " " . $objetB->world();
-echo $objetB->helloC() . " " . $objetB->worldC();
-echo "<br>";
-echo $objetA->getName();
-echo "<br>";
-echo $objetB->getName();
-echo "<br>";
+echo "Test de la méthode hello() de classe A : ";
+echo $objetA->hello() . B;
+echo "Test de la méthode world() de classe A : ";
+echo $objetA->world() . B;
+
+echo LIMITEUR_QUESTION . B;
+echo "Test de la méthode hello() de la classe B : ";
+echo $objetB->hello() . B;
+echo "Test de la méthode world() de la classe B : ";
+echo $objetB->world() . B;
+
+echo LIMITEUR_QUESTION . B;
+echo "Test de la méthode hello() du trait C à partir de la classe B : ";
+echo $objetB->helloC() . B;
+echo "Test de la méthode world() du trait C à partir de la classe B : ";
+echo $objetB->worldC() . B;
+
+echo LIMITEUR_QUESTION . B;
+echo "Test de la méthode getName() de la classe A : ";
+echo $objetA->getName() . B;
+
+echo LIMITEUR_QUESTION . B;
+echo "Test de la méthode getName() de la classe B : ";
+echo $objetB->getName() . B;
+
+echo LIMITEUR_QUESTION . B;
+echo "Test de la méthode countTo10() de la classe A : " . B;
 $generatorA = $objetA->countTo10();
 foreach ($generatorA as $i) {
-    echo $i;
+    echo $i . B; 
 }
-echo "<br>";
 
-$generatorB = $objetA->countTo10();
-foreach ($generatorB as $i) {
-    echo $i;
-}
-echo "<br>";
 //echo $objetA->arrow("Test");
 
 //Add class variables $name = "A" in class A and $name = "B" in class B and $name = "C" in trait C. And a CONSTANT class constant.
 
 //Create an arrow function that takes a $inputString string as an argument and returns "Hello " . $input. Call it.
+
+echo LIMITEUR_QUESTION . B;
+echo "Test de ??? : ";
 $arrowFunction = fn($inputString) => "Hello " . $inputString;
 echo $arrowFunction("John");

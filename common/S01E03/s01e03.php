@@ -26,6 +26,13 @@ use G4AS\Class\A;
 use G4AS\Class\B;
 use G4AS\Trait\C;
 
+define('LIMITEUR_QUESTION', '**************************************************');
+define('B', "<br>");
+
+echo LIMITEUR_QUESTION . B;
+echo "Travail sur les classes, les interfaces et les traits :" . B;
+echo LIMITEUR_QUESTION . B;
+
 $objetA = new A("","");
 $objetB = new B("","");
 

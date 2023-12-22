@@ -205,9 +205,12 @@ echo($G4A->mettreMajuscule("èçìàùéâêîôûëïüÿæœ"));
 
 echo B . LIMITEUR_QUESTION . B;
 echo "Caractères spéciaux :" . B;
+echo "test -> ";
 echo($G4A->charactereSpeciaux("test"));
-echo(" | ");
-echo($G4A->charactereSpeciaux("&<>\"'")); // présentation a faire !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+echo B ;
+echo "&<>\"' ->";
+echo($G4A->charactereSpeciaux("&<>\"'")) . B; 
+echo "(transforme un caractère HTML en caractères sécurisé)";
 
 echo B .LIMITEUR_QUESTION . B;
 echo "Tableau en string :" . B;
@@ -254,7 +257,7 @@ echo ($G4A->inverserChaine("èçì… Hello World!"));
 
 echo B .LIMITEUR_QUESTION . B;
 echo "Classe actuelle :" . B;
-echo $G4A;
+echo $G4A . " (nom de classe actuelle en chaîne de caractère)";
 
 echo B .LIMITEUR_QUESTION . B;
 echo "Concaténation de chaîne :" . B;
@@ -287,26 +290,33 @@ echo ("try catch : ");
 echo B .LIMITEUR_QUESTION . B;
 echo "Tableau trié par clé décroissante :" . B;
 $tab4 = array("test", "test2", "test3");
-print "keys : ";
+print "clés : ";
 print_r (array_keys($G4A->trier_tableau_par_cle_decroissante($tab4)));
 
 echo B .LIMITEUR_QUESTION . B;
 echo "Valeur présente dans un tableau et pas dans un autre :" . B;
 $tab5= array("test", "test2", "test3");
 $tab6= array("test", "test2", "test5");
+echo "tableau 1 = ['test', 'test2', 'test3'] " . B ;
+echo "tableau 2 = ['test', 'test2', 'test5'] " . B ;
+echo "Tableau final :" . B;
 print_r ($G4A->element_present_dans_tab1_et_pas_dans_tab2($tab5, $tab6));
 
 echo B .LIMITEUR_QUESTION . B;
 echo "Transforme texte en format titre :" . B;
-print ($G4A->transforme_texte_en_format_titre("coucou"));
 
-$tableau = ["test", 3, 'c', "lLaA"];
+echo "coucou -> ";
+echo $G4A->transforme_texte_en_format_titre("coucou") . B;
+
+$tableau = ["teSt", 3, 'c', "lLaA"];
+echo "['teSt', 3, 'c', 'lLaA'] ->" . B;
 print_r($G4A->transforme_tableau_en_format_titre($tableau));
 
 echo B .LIMITEUR_QUESTION . B;
 echo "Compter un type countable :" . B;
 //cas countable
 $comptable = new Comptable([1, 1, 1, 1]);
+echo "comptable = new Comptable ([1, 1, 1, 1])" . B; 
 $longueurComptable = $G4A->longueur($comptable);
 echo "Longueur de comptable : " . $longueurComptable;
 
@@ -315,18 +325,21 @@ echo "Taille d'un tableau :" . B;
 
 //cas tableau
 $tableau = array(1, 2, 3, 4, 5);
+echo "tableau = [1, 2, 3, 4, 5]" . B;
 echo "Longueur du tableau : " . $G4A->longueur($tableau);
 
 echo B .LIMITEUR_QUESTION . B;
 echo "Nombre de caractères dans une chaîne :" . B;
 // cas string
 $chaine = "yo";
+echo "chaine = " . $chaine . B;
 echo "Longueur de la chaîne : " . $G4A->longueur($chaine);
 
 echo B .LIMITEUR_QUESTION . B;
 echo "Longueur d'un nombre :" . B;
 // cas int
 $nombre = 14568;
+echo "nombre = " . $nombre . B;
 echo "Longueur du nombre : " . $G4A->longueur($nombre);
 ?>
 

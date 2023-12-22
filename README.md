@@ -134,13 +134,14 @@ PHPStan est un outil qui permet de verifier la qualité du code PHP (erreur de t
 
 ### Pour installer PHPUnit :
 
-
-Ouvrez un terminal dans votre répertoire perso,
-Tappeze cette commande a la racine des fichier ou vous vouler faire vos teste (la ou il y a iut-pw-part1):
+Ouvrez un terminal dans le répertoire common, dans le fichier S01E04-05,
+Tappeze cette commande :
     composer require --dev phpunit/phpunit ;
-ensuite pour executer les tests faire:
-./vendor/bin/phpunit
+
+Pour executer les tests, allez dans le répertoire common, dans le fichier S01E04-05,
+ tappez cette commande :
+    ./vendor/bin/phpunit
 Et voilà.
-faite un teste dans iut-pw-part1 de cette comande.
+
 
 
